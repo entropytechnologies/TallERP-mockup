@@ -18,8 +18,8 @@ export default {
     setup() {
         const links = ref([
             {name: "Customer", url: "/customer"},
-            {name: "Vehicle", url: "#"},
-            {name: "Sales", url: "#"},
+            {name: "Vehicle", url: "/vehicles"},
+            {name: "Sales", url: "/sales"},
             {name: "Service", url: "#"},
             {name: "Tire Storage", url: "#"},
             {name: "Inventory", url: "#"}

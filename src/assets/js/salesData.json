@@ -1,0 +1,5 @@
+[
+    {"firstName": "John", "lastName": "Doe", "phone":"555-123321", "address": "221B Baker Street", "activeVehicle": true, "activeStorage": true, "customerSince": "02-14-2021"},
+    {"firstName": "Edgar Allan", "lastName": "Poe", "phone":"555-123321", "address": "Baltimore", "activeVehicle": false, "activeStorage": true, "customerSince": "04-01-1986"},
+    {"firstName": "Stephen", "lastName": "King", "phone":"555-123321", "address": "Derry County", "activeVehicle": true, "activeStorage": true, "customerSince": "02-14-2021"}
+]
