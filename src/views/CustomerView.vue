@@ -30,11 +30,14 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Mark</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
+                <tr v-for="customer in customers" :key="customer.id">
+                    <td>{{customer.firstName}}</td>
+                    <td>{{customer.lastName}}</td>
+                    <td>{{customer.phone}}</td>
+                    <td>{{customer.address}}</td>
+                    <td>{{customer.activeVehicle}}</td>
+                    <td>{{customer.activeStorage}}</td>
+                    <td>{{customer.customerSince}}</td>
                 </tr>
             </tbody>
         </table>
@@ -42,13 +45,16 @@
 </template>
 
 <script>
+import { ref } from "vue"
+
 export default {
     setup() {
-        const customers = ref[
-            {firstName: ""}
-        ];
+        const customers = ref([
+            {firstName: "John", lastName: "Doe", phone:"555-123321", address: "221B Baker Street", activeVehicle: true, activeStorage: true, customerSince: "02-14-2021"},
+            {firstName: "John", lastName: "Doe", phone:"555-123321", address: "221B Baker Street", activeVehicle: true, activeStorage: true, customerSince: "02-14-2021"}
+        ]);
 
-        return customers
+        return {customers}
     }
 }
 </script>
