@@ -4,7 +4,9 @@ import HomeView from '../views/HomeView.vue'
 import CustomersView from '../views/CustomersView.vue'
 import CustomerPage from '../views/CustomerPage.vue'
 import SalesView from '../views/SalesView.vue'
+import SalesOrder from '../views/SalesOrder.vue'
 import VehiclesView from '../views/VehiclesView.vue'
+import TireStorage from '../views/TireStorageView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -35,9 +37,19 @@ const router = createRouter({
       component:  SalesView
     },
     {
+      path: '/salesorder',
+      name: 'salesorder',
+      component:  SalesOrder
+    },
+    {
       path: '/vehicles',
       name: 'vehicles',
       component:  VehiclesView
+    },
+    {
+      path: '/tirestorage',
+      name: 'tirestorage',
+      component:  TireStorage
     }
   ]
 })

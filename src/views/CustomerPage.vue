@@ -74,7 +74,8 @@
                     </div>
                 </div>
                 <div class="container bg-light mt-3 py-4 shadow-sm text-center">
-                    <router-link class="py-2 btn bg-white" to="/"><h3>Add Vehicle</h3></router-link>
+                    <h1 class="btn btn-lg btn-secondary" style="font-size:30px">+</h1>
+                    <p style="font-size:30px">Vehicle</p>
                 </div>
             </div>
         </div>    
