@@ -2,7 +2,7 @@
     <div class="container mt-4 text-center">
         <div class="row g-4">
             <div class="col-lg-2">
-                <h2>Customer</h2>
+                <h2>Customers</h2>
             </div>
             <div class="col-lg-7">
                 <form>
