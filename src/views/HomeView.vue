@@ -21,8 +21,8 @@ export default {
             {name: "Customer", url: "/customers"},
             {name: "Vehicle", url: "/vehicles"},
             {name: "Sales", url: "/sales"},
-            {name: "Service", url: "#"},
-            {name: "Tire Storage", url: "#"},
+            {name: "Service", url: "/service"},
+            {name: "Tire Storage", url: "/tirestorage"},
             {name: "Inventory", url: "#"}
         ]);
 

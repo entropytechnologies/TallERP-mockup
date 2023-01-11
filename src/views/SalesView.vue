@@ -13,7 +13,7 @@
             </div>
             <div class="col-lg-4">
                 <RouterLink class="btn btn-secondary mx-1" to="/">Estimate</RouterLink>
-                <RouterLink class="btn btn-secondary" to="/">Sales Order</RouterLink>
+                <RouterLink class="btn btn-secondary" to="/salesorder">Sales Order</RouterLink>
             </div>
         </div>
     </div>

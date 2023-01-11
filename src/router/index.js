@@ -7,6 +7,7 @@ import SalesView from '../views/SalesView.vue'
 import SalesOrder from '../views/SalesOrder.vue'
 import VehiclesView from '../views/VehiclesView.vue'
 import TireStorage from '../views/TireStorageView.vue'
+import ServiceView from '../views/ServiceView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -35,6 +36,11 @@ const router = createRouter({
       path: '/sales',
       name: 'sales',
       component:  SalesView
+    },
+    {
+      path: '/service',
+      name: 'service',
+      component:  ServiceView
     },
     {
       path: '/salesorder',
