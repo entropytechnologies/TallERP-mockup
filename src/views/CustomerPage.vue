@@ -45,7 +45,9 @@
                                 <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
                             </div>    
                         </div>                                                                            
-                    </div>    
+                    </div>
+                    <div></div>
+                    <button class="btn btn-secondary form-control">Update Client</button>    
                 </form>
             </div>
             <div class="col-lg-6 col-sm-8">

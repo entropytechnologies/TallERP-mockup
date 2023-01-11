@@ -18,7 +18,7 @@ import { ref } from "vue"
 export default {
     setup() {
         const links = ref([
-            {name: "Customer", url: "/customer"},
+            {name: "Customer", url: "/customers"},
             {name: "Vehicle", url: "/vehicles"},
             {name: "Sales", url: "/sales"},
             {name: "Service", url: "#"},

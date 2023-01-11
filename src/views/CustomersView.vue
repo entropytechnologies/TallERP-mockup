@@ -7,7 +7,10 @@
             <div class="col-lg-7">
                 <form>
                     <div class="mb-3">
-                        <input type="email" class="form-control bg-light" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Name, phone, lic, plate, etc...">
+                        <input type="email" class="form-control bg-light dropdown-toggle" id="exampleInputEmail1" data-bs-toggle="dropdown" aria-describedby="emailHelp" placeholder="Name, phone, lic, plate, etc...">
+                            <ul class="dropdown-menu">
+                                <li v-for="customer in customers" :key="customer.id"><router-link class="dropdown-item" href="/customer">{{customer.firstName + ' ' + customer.lastName}}</router-link></li>
+                            </ul>
                     </div>
                 </form>    
             </div>
