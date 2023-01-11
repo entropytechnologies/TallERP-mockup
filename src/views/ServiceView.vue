@@ -12,7 +12,7 @@
                 </form>    
             </div>
             <div class="col-lg-2">
-                <RouterLink class="btn btn-secondary" to="/">New Appointment</RouterLink>
+                <RouterLink class="btn btn-secondary" to="#">New Appointment</RouterLink>
             </div>
         </div>
     </div>

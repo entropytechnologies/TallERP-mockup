@@ -69,14 +69,14 @@
                             <div class="col-6">
                                 <div class="card bg-secondary py-2 text-center text-light" style="height:100px">
                                     <h5>Add Storage</h5>
-                                    <router-link to="/" class="btn text-white">click here</router-link>
+                                    <router-link to="/" class="btn text-white">+</router-link>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="container bg-light mt-3 py-4 shadow-sm text-center">
-                    <h1 class="btn btn-lg btn-secondary" style="font-size:30px">+</h1>
+                    <h1 class="btn btn-lg addButton px-3 shadow-sm" style="font-size:30px">+</h1>
                     <p style="font-size:30px">Vehicle</p>
                 </div>
             </div>
