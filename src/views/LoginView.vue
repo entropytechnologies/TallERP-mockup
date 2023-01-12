@@ -28,7 +28,7 @@
                                 </div>
 
                                 <div class="d-grid">
-                                    <button class="btn btn-lg btn-dark fw-bold mb-2" type="submit">Login</button>
+                                    <router-link class="btn btn-lg btn-dark fw-bold mb-2" to="/home">Login</router-link>
                                     <div class="text-center">
                                         <RouterLink to="">
                                             Forgot your password?
