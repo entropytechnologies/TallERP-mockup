@@ -15,7 +15,7 @@
                 </form>    
             </div>
             <div class="col-lg-3">
-                <RouterLink class="btn btn-secondary" to="/customer">Create new Customer</RouterLink>
+                <RouterLink class="btn btn-secondary" to="/newcustomer">Create new Customer</RouterLink>
             </div>
         </div>
     </div>
