@@ -10,6 +10,7 @@ import VehiclesView from '../views/VehiclesView.vue'
 import NewVehicleView from '../views/NewVehicleView.vue'
 import TireStorage from '../views/TireStorageView.vue'
 import ServiceView from '../views/ServiceView.vue'
+import ShopView from '../views/ShopView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -68,6 +69,11 @@ const router = createRouter({
       path: '/tirestorage',
       name: 'tirestorage',
       component:  TireStorage
+    },
+    {
+      path: '/shop',
+      name: 'Shop',
+      component: ShopView
     }
   ]
 })
