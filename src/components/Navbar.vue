@@ -23,8 +23,14 @@
                     <li class="nav-item">
                         <router-link class="nav-link" aria-current="page" to="/vehicles">Vehicles</router-link>
                     </li>
-                    <li class="nav-item">
-                        <router-link class="nav-link" aria-current="page" to="/sales">Sales</router-link>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Sales
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><router-link class="dropdown-item" to="/sales">Sales List</router-link></li>
+                            <li><router-link class="dropdown-item" to="/salesorder">Sales Order</router-link></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <router-link class="nav-link" aria-current="page" to="/service">Service</router-link>
