@@ -18,7 +18,7 @@
     </div>
     <div class="container mt-4">
         <table class="table table-bordered table-hover">
-            <thead class="bg-dark text-white">
+            <thead class="bg-dark text-white text-center">
                 <tr>
                     <th scope="col">Hoist 1</th>
                     <th scope="col">Hoist 2</th>
