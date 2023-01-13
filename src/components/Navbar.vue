@@ -32,6 +32,9 @@
                     <li class="nav-item">
                         <router-link class="nav-link" aria-current="page" to="/tirestorage">Tire Storage</router-link>
                     </li>
+                    <li class="nav-item">
+                        <router-link class="nav-link" aria-current="page" to="/shop">Shop</router-link>
+                    </li>                    
                 </ul>
             </div>
         </div>
