@@ -18,8 +18,8 @@
                             </div>    
                         </div>
                         <div class="mb-3">
-                                <label for="exampleFormControlText" class="form-label">Address</label>
-                                <input type="text" class="form-control" id="exampleInputText" aria-describedby="emailHelp" placeholder="Address">
+                            <label for="exampleFormControlText" class="form-label">Address</label>
+                            <input type="text" class="form-control" id="exampleInputText" aria-describedby="emailHelp" placeholder="Address">
                         </div>
                         <div class="col-6">
                             <div class="mb-3">
@@ -46,7 +46,6 @@
                             </div>    
                         </div>                                                                            
                     </div>
-                    <div></div>
                     <button class="btn btn-secondary form-control">Create Customer</button>    
                 </form>
             </div>
@@ -55,8 +54,8 @@
                 <div class="container bg-light mt-3 py-4 shadow-sm text-center">
                     <h4 class="mb-4">THIS CUSTOMER HAS NO VEHICLES</h4>
                     <div class="container mt-2">
-                    <h1 class="btn btn-lg addButton px-3 shadow-sm" style="font-size:30px">+</h1>
-                    <p style="font-size:30px">Add Vehicle</p>
+                        <h1 class="btn btn-lg addButton px-3 shadow-sm" style="font-size:30px">+</h1>
+                        <p style="font-size:30px">Add Vehicle</p>
                     </div>
                 </div>
             </div>
