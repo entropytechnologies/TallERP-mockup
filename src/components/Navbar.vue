@@ -36,6 +36,7 @@
                         <ul class="dropdown-menu">
                             <li><router-link class="dropdown-item" to="/sales">Sales List</router-link></li>
                             <li><router-link class="dropdown-item" to="/salesorder">Sales Order</router-link></li>
+                            <li><router-link class="dropdown-item" to="/newsalesorder">New Sales Order</router-link></li>
                         </ul>
                     </li>
                     <li class="nav-item">

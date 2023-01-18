@@ -6,6 +6,7 @@ import CustomerPage from '../views/CustomerPage.vue'
 import NewCustomerPage from '../views/NewCustomerPage.vue'
 import SalesView from '../views/SalesView.vue'
 import SalesOrder from '../views/SalesOrder.vue'
+import NewSalesOrder from '../views/NewSalesOrder.vue'
 import VehiclesView from '../views/VehiclesView.vue'
 import NewVehicleView from '../views/NewVehicleView.vue'
 import TireStorage from '../views/TireStorageView.vue'
@@ -43,17 +44,22 @@ const router = createRouter({
     {
       path: '/sales',
       name: 'sales',
-      component:  SalesView
+      component: SalesView
     },
     {
       path: '/service',
       name: 'service',
-      component:  ServiceView
+      component: ServiceView
     },
     {
       path: '/salesorder',
       name: 'salesorder',
-      component:  SalesOrder
+      component: SalesOrder
+    },
+    {
+      path: '/newsalesorder',
+      name: 'newsalesorder',
+      component: NewSalesOrder
     },
     {
       path: '/vehicles',

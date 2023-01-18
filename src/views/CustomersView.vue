@@ -81,18 +81,6 @@
                                     </div>
                                     <div class="col-6">
                                         <div class="mb-3">
-                                            <label for="exampleFormControlInput1" class="form-label">ADITIONAL LABEL</label>
-                                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
-                                        </div>                    
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="mb-3">
-                                            <label for="exampleFormControlInput1" class="form-label">ADITIONAL LABEL</label>
-                                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
-                                        </div>    
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="mb-3">
                                             <label for="exampleFormControlInput1" class="form-label">Phone</label>
                                             <input type="text" class="form-control" id="exampleFormControlInput1" aria-describedby="emailHelp" placeholder="Phone">
                                         </div>                    
@@ -155,22 +143,6 @@
                                                 <p>Doe</p>
                                             </div>    
                                         </div>
-                                        <div class="mb-3">
-                                            <h4 for="exampleFormControlInput1" class="form-label">Address</h4>
-                                            <p>TEST ADDRESS</p>
-                                        </div>
-                                        <div class="col-6">
-                                            <div class="mb-3">
-                                                <label for="exampleFormControlInput1" class="form-label">ADITIONAL LABEL</label>
-                                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
-                                            </div>                    
-                                        </div>
-                                        <div class="col-6">
-                                            <div class="mb-3">
-                                                <label for="exampleFormControlInput1" class="form-label">ADITIONAL LABEL</label>
-                                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
-                                            </div>    
-                                        </div>
                                         <div class="col-6">
                                             <div class="mb-3">
                                                 <h4 for="exampleFormControlInput1" class="form-label">Phone</h4>
@@ -184,7 +156,10 @@
                                             </div>    
                                         </div>                                                                            
                                     </div>
-                                    <div></div>
+                                    <div class="mb-3">
+                                        <h4 for="exampleFormControlInput1" class="form-label">Address</h4>
+                                        <p>TEST ADDRESS</p>
+                                    </div>
                                     <button class="btn btn-secondary form-control">Edit Customer</button>    
                                 </form>
                             </div>
@@ -203,7 +178,6 @@
                                                     <small>225/45R18 Goodyear</small>
                                                     <small>Alloy Rims</small>
                                                 </div>
-                                                
                                             </div>
                                             <div class="col-6">
                                                 <div class="card bg-secondary py-2 text-center text-light" style="height:100px">
