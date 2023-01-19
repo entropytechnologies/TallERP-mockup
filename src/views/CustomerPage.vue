@@ -54,7 +54,7 @@
                 <h3>Garage</h3>
                 <div class="container bg-light mt-3 py-4 shadow-sm text-center">
                     <h4 class="mb-4">Vehicle #1</h4>
-                    <img src="../assets/img/samplecar.png" class="img-fluid" alt="">
+                    <img src="../assets/img/samplecar.png" class="img-fluid car-img" alt="">
                     <div class="container mt-2">
                         <router-link to="/service" class="btn btn-secondary">BOOK A SERVICE</router-link>
                         <div class="row mt-2 g-2">
@@ -64,7 +64,6 @@
                                     <small>225/45R18 Goodyear</small>
                                     <small>Alloy Rims</small>
                                 </div>
-                                
                             </div>
                             <div class="col-6">
                                 <div class="card bg-secondary py-2 text-center text-light" style="height:100px">
@@ -90,6 +89,6 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
 </style>

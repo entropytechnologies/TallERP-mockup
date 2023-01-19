@@ -5,3 +5,14 @@
     border: none;
     font-weight: bolder;
 }
+.addButton:hover{
+    background: rgb(153, 153, 153);
+    color: white;
+    border: none;
+    font-weight: bolder;
+}
+.car-img:hover{
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    transform: rotateY(180deg);
+}
