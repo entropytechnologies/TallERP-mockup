@@ -9,7 +9,7 @@
                             <div class="mb-3">
                                 <h4 for="exampleFormControlInput1" class="form-label">First Name</h4>
                                 <p>John</p>
-                            </div>                    
+                            </div> 
                         </div>
                         <div class="col-6">
                             <div class="mb-3">
