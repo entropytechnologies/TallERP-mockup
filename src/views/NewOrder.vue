@@ -171,15 +171,54 @@
             </div>
         </div>
         <div class="modal fade" id="VehicleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
+            <div class="modal-dialog modal-xl">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Vehicle Modal</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
                     <div class="modal-body">
-                        ...
-                    </div>
+                        <div class="row g-2">
+                            <div class="col-4">
+                                <h5 class="modal-title" id="exampleModalLabel"><i class="fa-solid fa-user bg-light mx-2"></i>Vehicle Modal</h5>
+                            </div>
+                            <div class="col-5">
+                                <input type="text" class="form-control" placeholder="Search...">
+                            </div>
+                            <div class="col-3 d-flex justify-content-end">
+                                <button class="btn btn-primary" data-bs-target="#QuickAddVehicle" data-bs-toggle="modal">
+                                    <i class="fa-solid fa-circle-plus"></i>
+                                    Quick Add Vehicle
+                                </button>
+                            </div>
+                        </div>
+                        <hr>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Year</th>
+                                    <th scope="col">Make</th>
+                                    <th scope="col">Model</th>
+                                    <th scope="col">Lic.Plate</th>
+                                    <th scope="col">VIN</th>
+                                    <th scope="col">Last Service</th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1985</td>
+                                    <td>Delorean</td>
+                                    <td>ABC123</td>
+                                    <td>ABC123</td>
+                                    <td>5TEWN72N63Z275910</td>
+                                    <td>Jun 27, 2019</td>
+                                    <td>
+                                        <button class="btn btn-primary">
+                                            <i class="fa-solid fa-circle-plus"></i>
+                                            Choose
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>                                        
+                    </div>  
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                         <button type="button" class="btn btn-primary">Save changes</button>
@@ -205,6 +244,7 @@
             </div>
         </div>           
     </div>
+    <!-----Quick Add Customer------>
     <div class="modal fade" id="QuickAddCustomer" aria-hidden="true" aria-labelledby="QuickAddCustomer" tabindex="-1">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
@@ -279,6 +319,184 @@
             </div>
         </div>
     </div>
+    <!-----Quick Add Vehicle------>
+    <div class="modal fade" id="QuickAddVehicle" aria-hidden="true" aria-labelledby="QuickAddVehicle" tabindex="-1">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalToggleLabel2"><i class="fa-solid fa-user mx-1"></i>Quick Add Vehicle</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="mb-3">
+                                    <label for="Year" class="form-label">Year</label>
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Select Year</option>
+                                        <option value="1">2022</option>
+                                        <option value="2">2021</option>
+                                        <option value="2">2020</option>
+                                        <option value="2">2019</option>
+                                        <option value="2">2018</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="Color" class="form-label">Color</label>
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Select Color</option>
+                                        <option value="1">Black</option>
+                                        <option value="2">White</option>
+                                        <option value="2">Blue</option>
+                                        <option value="2">Red</option>
+                                        <option value="2">Silver</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="Setup" class="form-label">Setup</label>
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Select Setup</option>
+                                        <option value="1">Square</option>
+                                        <option value="2">Staggered</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="Wheels" class="form-label">Wheels</label>
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Select Wheels</option>
+                                        <option value="1">OEM - 17"</option>
+                                        <option value="2">...</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="mb-3">
+                                    <label for="Make" class="form-label">Make</label>
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Select Make</option>
+                                        <option value="1">Honda</option>
+                                        <option value="2">Chevrolet</option>
+                                        <option value="2">Ford</option>
+                                        <option value="2">Toyota</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="LicPlate" class="form-label">License Plate</label>
+                                    <input type="text" class="form-control" id="LicPlate" placeholder="License Plate">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="frontTireSize" class="form-label">Front Tire Size</label>
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Select Front Tire Size</option>
+                                        <option value="1">215/50R17</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="mb-3">
+                                    <label for="Model" class="form-label">Model</label>
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Select Model</option>
+                                        <option value="1">...</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="vin" class="form-label">V.I.N</label>
+                                    <input type="text" class="form-control" id="vin" placeholder="vin">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="RearTireSize" class="form-label">Rear Tire Size</label>
+                                    <input type="text" class="form-control" id="RearTireSize" placeholder="RearTireSize">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-target="#VehicleModal" data-bs-toggle="modal">Back to Add Vehicle</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-----Quick Add Service------>
+    <div class="modal fade" id="QuickAddService" aria-hidden="true" aria-labelledby="QuickAddService" tabindex="-1">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalToggleLabel2"><i class="fa-solid fa-user mx-1"></i>Quick Add Vehicle</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="mb-3">
+                                    <label for="FirstName" class="form-label">Customer Type</label>
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Select Customer Type</option>
+                                        <option value="1">Person</option>
+                                        <option value="2">Company</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="FirstName" class="form-label">First Name</label>
+                                    <input type="text" class="form-control" id="FirstName" placeholder="First Name">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="FirstName" class="form-label">Address</label>
+                                    <input type="text" class="form-control" id="Address" placeholder="Address">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="FirstName" class="form-label">Country</label>
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Select Country</option>
+                                        <option value="1">USA</option>
+                                        <option value="2">Canada</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="mb-3">
+                                    <label for="FirstName" class="form-label">Company Name</label>
+                                    <input type="text" class="form-control" id="CompanyName" placeholder="Company Name">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="LastName" class="form-label">Last Name</label>
+                                    <input type="text" class="form-control" id="LastName" placeholder="Last Name">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="FirstName" class="form-label">City</label>
+                                    <input type="text" class="form-control" id="City" placeholder="City">
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="mb-3">
+                                    <label for="FirstName" class="form-label">Phone</label>
+                                    <input type="text" class="form-control" id="Phone" placeholder="Phone">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="FirstName" class="form-label">Email</label>
+                                    <input type="text" class="form-control" id="Email" placeholder="Email">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="ZipCode" class="form-label">ZIP / Postal Code</label>
+                                    <input type="text" class="form-control" id="ZipCode" placeholder="ZIP / Postal Code">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-target="#CustomerModal" data-bs-toggle="modal">Back to Add Customer</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </template>
 
 <script>
