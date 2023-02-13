@@ -192,7 +192,7 @@
                                 <input type="text" class="form-control" placeholder="Search...">
                             </div>
                             <div class="col-3 d-flex justify-content-end">
-                                <button class="btn btn-primary" data-bs-target="#QuickAddCustomer" data-bs-toggle="modal">
+                                <button class="btn btn-primary" data-bs-target="#newCustomer">
                                     <i class="fa-solid fa-circle-plus"></i>
                                     New Customer
                                 </button>
@@ -318,6 +318,7 @@
                 </div>
             </div>
         </div>
+        <!-----Vehicle Modal------>
         <div class="modal fade" id="VehicleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-xl">
                 <div class="modal-content">
@@ -458,6 +459,7 @@
                 </div>
             </div>
         </div>
+        <!-----Service Modal------>
         <div class="modal fade" id="ServiceModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
