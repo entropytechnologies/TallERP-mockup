@@ -7,30 +7,108 @@
             <div class="col-9">
                 <div class="row">
                     <div class="col-4">
-                        <div class="card shadow-sm text-center py-3">
-                            <div class="card-title">
-                               <h4>Customer</h4> 
+                        <div class="card shadow-sm">
+                            <div v-if="customerSelected">
+                                <div class="card-header">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <h5 class="align-self-start">Customer</h5>
+                                        <button class="page-title-right btn btn-outline-primary btn-sm">Edit</button>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <p class="align-self-start text-primary">Name:</p>
+                                        <p class="align-self-center" style="max-width: 150px">Parvinder Singh</p>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <p class="align-self-start text-primary">Email:</p>
+                                        <p class="align-self-center" style="max-width: 150px">psingh@email.com</p>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <p class="align-self-start text-primary">Phone:</p>
+                                        <p class="align-self-end text-truncate" style="max-width: 150px">12345678</p>
+                                    </div>                                    
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <p class="align-self-start text-primary">Address:</p>
+                                        <p class="align-self-end text-truncate" style="max-width: 150px">123 Mississauga Rd. Mississau...</p>
+                                    </div>                                 
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <p class="align-self-start text-primary">Customer since:</p>
+                                        <p class="align-self-end text-truncate" style="max-width: 150px">2020</p>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <p class="align-self-start text-primary">Qty of services:</p>
+                                        <p class="align-self-end text-truncate" style="max-width: 150px">2</p>
+                                    </div>
+                                </div>
                             </div>
-                            <h4><i class="fa-solid fa-user"></i></h4>
-                            <button class="btn btn-light mx-4 m" data-bs-toggle="modal" data-bs-target="#CustomerModal">Add Customer</button>
+                            <div v-else>
+                                <div class="card-body text-center">
+                                    <div class="card-title">
+                                        <h5>Customer</h5> 
+                                    </div>
+                                    <h4><i class="fa-solid fa-user"></i></h4>
+                                    <button class="btn btn-light" data-bs-toggle="modal" data-bs-target="#CustomerModal">Add Customer</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="col-4">
-                        <div class="card shadow-sm text-center py-3">
-                            <div class="card-title">
-                               <h4>Vehicle</h4> 
+                        <div class="card shadow-sm text-center">
+                            <div v-if="vehicleSelected">
+                                <div class="card-header">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <h5 class="align-self-start">Vehicle</h5>
+                                        <button class="page-title-right btn btn-outline-primary btn-sm">Edit</button>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <p class="align-self-start text-primary">Year:</p>
+                                        <p class="align-self-center" style="max-width: 150px">2018</p>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <p class="align-self-start text-primary">Make:</p>
+                                        <p class="align-self-center" style="max-width: 150px">Honda</p>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <p class="align-self-start text-primary">Model:</p>
+                                        <p class="align-self-end text-truncate" style="max-width: 150px">Civic</p>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <p class="align-self-start text-primary">Color:</p>
+                                        <p class="align-self-end text-truncate" style="max-width: 150px">Black</p>
+                                    </div>                                    
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <p class="align-self-start text-primary">Lic.Plate:</p>
+                                        <p class="align-self-end text-truncate" style="max-width: 150px">CCFR 223</p>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <p class="align-self-start text-primary">Last Service:</p>
+                                        <p class="align-self-end text-truncate" style="max-width: 150px">Jun 27, 2</p>
+                                    </div>
+                                </div>
                             </div>
-                            <h4><i class="fa-solid fa-car"></i></h4>
-                            <button class="btn btn-light mx-4" data-bs-toggle="modal" data-bs-target="#VehicleModal">Add Vehicle</button>
+                            <div v-else>
+                                <div class="card-body text-center">
+                                    <div class="card-title">
+                                        <h5>Vehicle</h5> 
+                                    </div>
+                                    <h4><i class="fa-solid fa-user"></i></h4>
+                                    <button class="btn btn-light" data-bs-toggle="modal" data-bs-target="#VehicleModal">Add Vehicle</button>
+                                </div>
+                            </div>    
                         </div>
                     </div>
                     <div class="col-4">
-                        <div class="card shadow-sm text-center py-3">
-                            <div class="card-title">
-                               <h4>Service</h4> 
+                        <div class="card shadow-sm text-center">
+                            <div class="card-body">
+                                <div class="card-title">
+                                <h5>Service</h5> 
+                                </div>
+                                <h5><i class="fa-solid fa-calendar-days"></i></h5>
+                                <button class="btn btn-light mx-4" data-bs-toggle="modal" data-bs-target="#ServiceModal">Schedule Service</button>
                             </div>
-                            <h4><i class="fa-solid fa-calendar-days"></i></h4>
-                            <button class="btn btn-light mx-4" data-bs-toggle="modal" data-bs-target="#ServiceModal">Schedule Service</button>
                         </div>
                     </div>
                 </div>
@@ -77,9 +155,9 @@
                 <div>
                     <div class="card shadow-sm">
                         <div class="container bg-light">
-                            <h4>Order Detail</h4>
+                            <h5>Order Detail</h5>
                         </div>
-                        <div class="card-content mt-2 mx-2">
+                        <div class="card-body mt-2">
                             <p>Subtotal</p>
                             <p>Discount</p>
                             <p>Text</p>
@@ -128,33 +206,7 @@
                                     <td>testemail@gmail.com</td>
                                     <td>Feb, 30, 2022</td>
                                     <td>
-                                        <button class="btn btn-primary">
-                                            <i class="fa-solid fa-circle-plus"></i>
-                                            Choose
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>555-111</td>
-                                    <td>testemail@gmail.com</td>
-                                    <td>Feb, 30, 2022</td>
-                                    <td>
-                                        <button class="btn btn-primary">
-                                            <i class="fa-solid fa-circle-plus"></i>
-                                            Choose
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Larry</td>
-                                    <td>the Bird</td>
-                                    <td>555-111</td>
-                                    <td>testemail@gmail.com</td>
-                                    <td>Feb, 30, 2022</td>
-                                    <td>
-                                        <button class="btn btn-primary">
+                                        <button class="btn btn-primary" @click="toggleCustomerSelected" data-bs-toggle="modal">
                                             <i class="fa-solid fa-circle-plus"></i>
                                             Choose
                                         </button>
@@ -162,11 +214,7 @@
                                 </tr>
                             </tbody>
                         </table>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
+                    </div>  
                 </div>
             </div>
         </div>
@@ -218,10 +266,6 @@
                                 </tr>
                             </tbody>
                         </table>                                        
-                    </div>  
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
                     </div>
                 </div>
             </div>
@@ -248,74 +292,81 @@
     <div class="modal fade" id="QuickAddCustomer" aria-hidden="true" aria-labelledby="QuickAddCustomer" tabindex="-1">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalToggleLabel2"><i class="fa-solid fa-user mx-1"></i>Quick Add Customer</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form action="">
-                    <div class="row">
-                        <div class="col-4">
-                            <div class="mb-3">
-                                <label for="FirstName" class="form-label">Customer Type</label>
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Select Customer Type</option>
-                                    <option value="1">Person</option>
-                                    <option value="2">Company</option>
-                                </select>
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalToggleLabel2"><i class="fa-solid fa-user mx-1"></i>Quick Add Customer</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="mb-3">
+                                    <label for="FirstName" class="form-label">Customer Type</label>
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Select Customer Type</option>
+                                        <option value="1">Person</option>
+                                        <option value="2">Company</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="FirstName" class="form-label">First Name</label>
+                                    <input type="text" class="form-control" id="FirstName" placeholder="First Name">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="FirstName" class="form-label">Address</label>
+                                    <input type="text" class="form-control" id="Address" placeholder="Address">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="FirstName" class="form-label">Country</label>
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Select Country</option>
+                                        <option value="1">USA</option>
+                                        <option value="2">Canada</option>
+                                    </select>
+                                </div>
                             </div>
-                            <div class="mb-3">
-                                <label for="FirstName" class="form-label">First Name</label>
-                                <input type="text" class="form-control" id="FirstName" placeholder="First Name">
+                            <div class="col-4">
+                                <div class="mb-3">
+                                    <label for="FirstName" class="form-label">Company Name</label>
+                                    <input type="text" class="form-control" id="CompanyName" placeholder="Company Name">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="LastName" class="form-label">Last Name</label>
+                                    <input type="text" class="form-control" id="LastName" placeholder="Last Name">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="FirstName" class="form-label">City</label>
+                                    <input type="text" class="form-control" id="City" placeholder="City">
+                                </div>
                             </div>
-                            <div class="mb-3">
-                                <label for="FirstName" class="form-label">Address</label>
-                                <input type="text" class="form-control" id="Address" placeholder="Address">
-                            </div>
-                            <div class="mb-3">
-                                <label for="FirstName" class="form-label">Country</label>
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Select Country</option>
-                                    <option value="1">USA</option>
-                                    <option value="2">Canada</option>
-                                </select>
+                            <div class="col-4">
+                                <div class="mb-3">
+                                    <label for="FirstName" class="form-label">Phone</label>
+                                    <input type="text" class="form-control" id="Phone" placeholder="Phone">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="FirstName" class="form-label">Email</label>
+                                    <input type="text" class="form-control" id="Email" placeholder="Email">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="ZipCode" class="form-label">ZIP / Postal Code</label>
+                                    <input type="text" class="form-control" id="ZipCode" placeholder="ZIP / Postal Code">
+                                </div>
                             </div>
                         </div>
-                        <div class="col-4">
-                            <div class="mb-3">
-                                <label for="FirstName" class="form-label">Company Name</label>
-                                <input type="text" class="form-control" id="CompanyName" placeholder="Company Name">
-                            </div>
-                            <div class="mb-3">
-                                <label for="LastName" class="form-label">Last Name</label>
-                                <input type="text" class="form-control" id="LastName" placeholder="Last Name">
-                            </div>
-                            <div class="mb-3">
-                                <label for="FirstName" class="form-label">City</label>
-                                <input type="text" class="form-control" id="City" placeholder="City">
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="mb-3">
-                                <label for="FirstName" class="form-label">Phone</label>
-                                <input type="text" class="form-control" id="Phone" placeholder="Phone">
-                            </div>
-                            <div class="mb-3">
-                                <label for="FirstName" class="form-label">Email</label>
-                                <input type="text" class="form-control" id="Email" placeholder="Email">
-                            </div>
-                            <div class="mb-3">
-                                <label for="ZipCode" class="form-label">ZIP / Postal Code</label>
-                                <input type="text" class="form-control" id="ZipCode" placeholder="ZIP / Postal Code">
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" data-bs-target="#CustomerModal" data-bs-toggle="modal">Back to Add Customer</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
+                    </form>
+                    <hr>
+                    <div class="text-center">
+                        <button type="button" class="btn btn-primary me-2">
+                            <i class="fa-solid fa-floppy-disk me-1"></i>
+                            Save Customer
+                        </button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                            <i class="fa-solid fa-trash me-1"></i>
+                            Close
+                        </button>
+                    </div>    
+                </div>
             </div>
         </div>
     </div>
@@ -412,10 +463,17 @@
                             </div>
                         </div>
                     </form>
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" data-bs-target="#VehicleModal" data-bs-toggle="modal">Back to Add Vehicle</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <hr>
+                    <div class="text-center">
+                        <button type="button" class="btn btn-primary me-2">
+                            <i class="fa-solid fa-floppy-disk me-1"></i>
+                            Save Vehicle
+                        </button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                            <i class="fa-solid fa-trash me-1"></i>
+                            Close
+                        </button>
+                    </div>                        
                 </div>
             </div>
         </div>
@@ -488,10 +546,17 @@
                             </div>
                         </div>
                     </form>
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" data-bs-target="#CustomerModal" data-bs-toggle="modal">Back to Add Customer</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <hr>
+                    <div class="text-center">
+                        <button type="button" class="btn btn-primary me-2">
+                            <i class="fa-solid fa-floppy-disk me-1"></i>
+                            Save Vehicle
+                        </button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                            <i class="fa-solid fa-trash me-1"></i>
+                            Close
+                        </button>
+                    </div>                         
                 </div>
             </div>
         </div>
@@ -507,29 +572,17 @@ import ModalComponent from './component/Modal.vue'
 export default {
     components: { ModalComponent },
     setup() {
-        const OrderDetails = ref([]);
-        const CustomerModal = true;
-        const VehicleModal = false;
-        const ServiceModal = false;
+        const customerSelected = ref(false);
+        const vehicleSelected = ref(false);
 
-        const toggleCustomerModal = () => {
-            CustomerModal = !CustomerModal;
-        };
-        const toggleVehicleModal = () => {
-            VehicleModal = !VehicleModal;
-        };
-        const toggleServiceModal = () => {
-            ServiceModal = !ServiceModal;
+        const toggleCustomerSelected = () => {
+            customerSelected.value = !customerSelected.value;
         };
 
         return {
-            OrderDetails,
-            toggleCustomerModal,
-            toggleVehicleModal,
-            toggleServiceModal,
-            CustomerModal,
-            VehicleModal,
-            ServiceModal
+            customerSelected,
+            vehicleSelected,
+            toggleCustomerSelected
         }
     }
 }
