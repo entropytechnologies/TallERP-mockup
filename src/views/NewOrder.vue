@@ -240,7 +240,7 @@
                                     </table>
                                 </div>
                                 <div class="tab-pane fade" id="newCustomer" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
-                                    <div class="moda-body">
+                                    <div class="modal-body">
                                         <form action="">
                                             <div class="row">
                                                 <div class="col-4">
@@ -475,125 +475,6 @@
                 </div>
             </div>
         </div>           
-    </div>
-    <!-----Quick Add Customer------>
-    <div class="modal fade" id="QuickAddCustomer" aria-hidden="true" aria-labelledby="QuickAddCustomer" tabindex="-1">
-        <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalToggleLabel2"><i class="fa-solid fa-user mx-1"></i>Quick Add Customer</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-----Quick Add Vehicle------>
-    <div class="modal fade" id="QuickAddVehicle" aria-hidden="true" aria-labelledby="QuickAddVehicle" tabindex="-1">
-        <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalToggleLabel2"><i class="fa-solid fa-user mx-1"></i>Quick Add Vehicle</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form action="">
-                        <div class="row">
-                            <div class="col-4">
-                                <div class="mb-3">
-                                    <label for="Year" class="form-label">Year</label>
-                                    <select class="form-select" aria-label="Default select example">
-                                        <option selected>Select Year</option>
-                                        <option value="1">2022</option>
-                                        <option value="2">2021</option>
-                                        <option value="2">2020</option>
-                                        <option value="2">2019</option>
-                                        <option value="2">2018</option>
-                                    </select>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="Color" class="form-label">Color</label>
-                                    <select class="form-select" aria-label="Default select example">
-                                        <option selected>Select Color</option>
-                                        <option value="1">Black</option>
-                                        <option value="2">White</option>
-                                        <option value="2">Blue</option>
-                                        <option value="2">Red</option>
-                                        <option value="2">Silver</option>
-                                    </select>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="Setup" class="form-label">Setup</label>
-                                    <select class="form-select" aria-label="Default select example">
-                                        <option selected>Select Setup</option>
-                                        <option value="1">Square</option>
-                                        <option value="2">Staggered</option>
-                                    </select>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="Wheels" class="form-label">Wheels</label>
-                                    <select class="form-select" aria-label="Default select example">
-                                        <option selected>Select Wheels</option>
-                                        <option value="1">OEM - 17"</option>
-                                        <option value="2">...</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <div class="mb-3">
-                                    <label for="Make" class="form-label">Make</label>
-                                    <select class="form-select" aria-label="Default select example">
-                                        <option selected>Select Make</option>
-                                        <option value="1">Honda</option>
-                                        <option value="2">Chevrolet</option>
-                                        <option value="2">Ford</option>
-                                        <option value="2">Toyota</option>
-                                    </select>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="LicPlate" class="form-label">License Plate</label>
-                                    <input type="text" class="form-control" id="LicPlate" placeholder="License Plate">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="frontTireSize" class="form-label">Front Tire Size</label>
-                                    <select class="form-select" aria-label="Default select example">
-                                        <option selected>Select Front Tire Size</option>
-                                        <option value="1">215/50R17</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <div class="mb-3">
-                                    <label for="Model" class="form-label">Model</label>
-                                    <select class="form-select" aria-label="Default select example">
-                                        <option selected>Select Model</option>
-                                        <option value="1">...</option>
-                                    </select>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="vin" class="form-label">V.I.N</label>
-                                    <input type="text" class="form-control" id="vin" placeholder="vin">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="RearTireSize" class="form-label">Rear Tire Size</label>
-                                    <input type="text" class="form-control" id="RearTireSize" placeholder="RearTireSize">
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                    <hr>
-                    <div class="text-center">
-                        <button type="button" class="btn btn-primary me-2">
-                            <i class="fa-solid fa-floppy-disk me-1"></i>
-                            Save Vehicle
-                        </button>
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                            <i class="fa-solid fa-trash me-1"></i>
-                            Close
-                        </button>
-                    </div>                        
-                </div>
-            </div>
-        </div>
     </div>
 
     <!-----Quick Add Service------>
