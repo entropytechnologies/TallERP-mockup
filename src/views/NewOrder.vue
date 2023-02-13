@@ -151,6 +151,7 @@
 
                 </form>
             </div>
+            <!-- Card Detail -->
             <div class="col-3">
                 <div>
                     <div class="card shadow-sm">
@@ -158,11 +159,23 @@
                             <h5>Order Detail</h5>
                         </div>
                         <div class="card-body mt-2">
-                            <p>Subtotal</p>
-                            <p>Discount</p>
-                            <p>Text</p>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <p class="align-self-start">Subtotal:</p>
+                                <p class="align-self-center" style="max-width: 150px">0.00</p>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <p class="align-self-start">Discount:</p>
+                                <p class="align-self-center text-success" style="max-width: 150px">0.00</p>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <p class="align-self-start">Tax:</p>
+                                <p class="align-self-center" style="max-width: 150px">0.00</p>
+                            </div>                                                             
                             <hr>
-                            <p class="fw-bold">Total</p>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <h6 class="align-self-start">Total:</h6>
+                                <h6 class="align-self-center" style="max-width: 150px">0.00</h6>
+                            </div>     
                         </div>
                     </div>
                 </div>
@@ -187,33 +200,119 @@
                         </div>
                         <hr>
                     <div class="modal-body">
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th scope="col">First Name</th>
-                                    <th scope="col">Last Name</th>
-                                    <th scope="col">Phone</th>
-                                    <th scope="col">Email</th>
-                                    <th scope="col">Last Service</th>
-                                    <th scope="col">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>555-111</td>
-                                    <td>testemail@gmail.com</td>
-                                    <td>Feb, 30, 2022</td>
-                                    <td>
-                                        <button class="btn btn-primary" @click="toggleCustomerSelected" data-bs-toggle="modal">
-                                            <i class="fa-solid fa-circle-plus"></i>
-                                            Choose
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Existing Customer</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">New Customer</button>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">First Name</th>
+                                            <th scope="col">Last Name</th>
+                                            <th scope="col">Phone</th>
+                                            <th scope="col">Email</th>
+                                            <th scope="col">Last Service</th>
+                                            <th scope="col">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Mark</td>
+                                            <td>Otto</td>
+                                            <td>555-111</td>
+                                            <td>testemail@gmail.com</td>
+                                            <td>Feb, 30, 2022</td>
+                                            <td>
+                                                <button class="btn btn-primary" @click="toggleCustomerSelected" data-bs-toggle="modal">
+                                                    <i class="fa-solid fa-circle-plus"></i>
+                                                    Choose
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+                                <div class="moda-body">
+                                    <h5 class="my-3">Quick Add Customer</h5>
+                                    <form action="">
+                                        <div class="row">
+                                            <div class="col-4">
+                                                <div class="mb-3">
+                                                    <label for="FirstName" class="form-label">Customer Type</label>
+                                                    <select class="form-select" aria-label="Default select example">
+                                                        <option selected>Select Customer Type</option>
+                                                        <option value="1">Person</option>
+                                                        <option value="2">Company</option>
+                                                    </select>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="FirstName" class="form-label">First Name</label>
+                                                    <input type="text" class="form-control" id="FirstName" placeholder="First Name">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="FirstName" class="form-label">Address</label>
+                                                    <input type="text" class="form-control" id="Address" placeholder="Address">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="FirstName" class="form-label">Country</label>
+                                                    <select class="form-select" aria-label="Default select example">
+                                                        <option selected>Select Country</option>
+                                                        <option value="1">USA</option>
+                                                        <option value="2">Canada</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-4">
+                                                <div class="mb-3">
+                                                    <label for="FirstName" class="form-label">Company Name</label>
+                                                    <input type="text" class="form-control" id="CompanyName" placeholder="Company Name">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="LastName" class="form-label">Last Name</label>
+                                                    <input type="text" class="form-control" id="LastName" placeholder="Last Name">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="FirstName" class="form-label">City</label>
+                                                    <input type="text" class="form-control" id="City" placeholder="City">
+                                                </div>
+                                            </div>
+                                            <div class="col-4">
+                                                <div class="mb-3">
+                                                    <label for="FirstName" class="form-label">Phone</label>
+                                                    <input type="text" class="form-control" id="Phone" placeholder="Phone">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="FirstName" class="form-label">Email</label>
+                                                    <input type="text" class="form-control" id="Email" placeholder="Email">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="ZipCode" class="form-label">ZIP / Postal Code</label>
+                                                    <input type="text" class="form-control" id="ZipCode" placeholder="ZIP / Postal Code">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <hr>
+                                    <div class="text-center">
+                                        <button type="button" class="btn btn-primary me-2">
+                                            <i class="fa-solid fa-floppy-disk me-1"></i>
+                                            Save Customer
                                         </button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                            <i class="fa-solid fa-trash me-1"></i>
+                                            Close
+                                        </button>
+                                    </div>    
+                                </div>
+                            </div>
+                        </div>
                     </div>  
                 </div>
             </div>
