@@ -154,7 +154,7 @@
             <div class="col-3">
                 <div>
                     <div class="card shadow-sm">
-                        <div class="container bg-light">
+                        <div class="card-header">
                             <h5>Order Detail</h5>
                         </div>
                         <div class="card-body mt-2">
@@ -258,7 +258,7 @@
                                     <td>5TEWN72N63Z275910</td>
                                     <td>Jun 27, 2019</td>
                                     <td>
-                                        <button class="btn btn-primary">
+                                        <button class="btn btn-primary" data-bs-toggle="modal" @click="toggleVehicleSelected">
                                             <i class="fa-solid fa-circle-plus"></i>
                                             Choose
                                         </button>
@@ -578,11 +578,15 @@ export default {
         const toggleCustomerSelected = () => {
             customerSelected.value = !customerSelected.value;
         };
+        const toggleVehicleSelected = () => {
+            vehicleSelected.value = !vehicleSelected.value;
+        };
 
         return {
             customerSelected,
             vehicleSelected,
-            toggleCustomerSelected
+            toggleCustomerSelected,
+            toggleVehicleSelected
         }
     }
 }
