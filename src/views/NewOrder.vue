@@ -200,47 +200,188 @@
                         </div>
                         <hr>
                     <div class="modal-body">
+                        <!-----Customer Tabs----->
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item" role="presentation">
-                                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Existing Customer</button>
+                                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#existingCustomer" type="button" role="tab" aria-controls="existingCustomer" aria-selected="true">Existing Customer</button>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">New Customer</button>
+                                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#newCustomer" type="button" role="tab" aria-controls="newCustomer" aria-selected="false">New Customer</button>
                                 </li>
                             </ul>
                             <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                                <div class="tab-pane fade show active" id="existingCustomer" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">First Name</th>
+                                                <th scope="col">Last Name</th>
+                                                <th scope="col">Phone</th>
+                                                <th scope="col">Email</th>
+                                                <th scope="col">Last Service</th>
+                                                <th scope="col">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Mark</td>
+                                                <td>Otto</td>
+                                                <td>555-111</td>
+                                                <td>testemail@gmail.com</td>
+                                                <td>Feb, 30, 2022</td>
+                                                <td>
+                                                    <button class="btn btn-primary" @click="toggleCustomerSelected" data-bs-toggle="modal">
+                                                        <i class="fa-solid fa-circle-plus"></i>
+                                                        Choose
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="tab-pane fade" id="newCustomer" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+                                    <div class="moda-body">
+                                        <form action="">
+                                            <div class="row">
+                                                <div class="col-4">
+                                                    <div class="mb-3">
+                                                        <label for="FirstName" class="form-label">Customer Type</label>
+                                                        <select class="form-select" aria-label="Default select example">
+                                                            <option selected>Select Customer Type</option>
+                                                            <option value="1">Person</option>
+                                                            <option value="2">Company</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="FirstName" class="form-label">First Name</label>
+                                                        <input type="text" class="form-control" id="FirstName" placeholder="First Name">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="FirstName" class="form-label">Address</label>
+                                                        <input type="text" class="form-control" id="Address" placeholder="Address">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="FirstName" class="form-label">Country</label>
+                                                        <select class="form-select" aria-label="Default select example">
+                                                            <option selected>Select Country</option>
+                                                            <option value="1">USA</option>
+                                                            <option value="2">Canada</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div class="mb-3">
+                                                        <label for="FirstName" class="form-label">Company Name</label>
+                                                        <input type="text" class="form-control" id="CompanyName" placeholder="Company Name">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="LastName" class="form-label">Last Name</label>
+                                                        <input type="text" class="form-control" id="LastName" placeholder="Last Name">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="FirstName" class="form-label">City</label>
+                                                        <input type="text" class="form-control" id="City" placeholder="City">
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div class="mb-3">
+                                                        <label for="FirstName" class="form-label">Phone</label>
+                                                        <input type="text" class="form-control" id="Phone" placeholder="Phone">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="FirstName" class="form-label">Email</label>
+                                                        <input type="text" class="form-control" id="Email" placeholder="Email">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="ZipCode" class="form-label">ZIP / Postal Code</label>
+                                                        <input type="text" class="form-control" id="ZipCode" placeholder="ZIP / Postal Code">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <hr>
+                                        <div class="text-center">
+                                            <button type="button" class="btn btn-primary me-2">
+                                                <i class="fa-solid fa-floppy-disk me-1"></i>
+                                                Save Customer
+                                            </button>
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                                <i class="fa-solid fa-trash me-1"></i>
+                                                Close
+                                            </button>
+                                        </div>    
+                                    </div>
+                                </div>
+                            </div>
+                        <!-----Customer Tabs------>
+                    </div>  
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="VehicleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="row g-2">
+                            <div class="col-4">
+                                <h5 class="modal-title" id="exampleModalLabel"><i class="fa-solid fa-user bg-light mx-2"></i>Vehicle Modal</h5>
+                            </div>
+                            <div class="col-5">
+                                <input type="text" class="form-control" placeholder="Search...">
+                            </div>
+                            <div class="col-3 d-flex justify-content-end">
+                                <button class="btn btn-primary" data-bs-target="#QuickAddVehicle" data-bs-toggle="modal">
+                                    <i class="fa-solid fa-circle-plus"></i>
+                                    Quick Add Vehicle
+                                </button>
+                            </div>
+                        </div>
+                        <hr>
+
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#customersVehicle" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Customer's Vehicle</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#newVehicle" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">New Vehicle</button>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="customersVehicle" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+
                                 <table class="table table-striped">
                                     <thead>
                                         <tr>
-                                            <th scope="col">First Name</th>
-                                            <th scope="col">Last Name</th>
-                                            <th scope="col">Phone</th>
-                                            <th scope="col">Email</th>
+                                            <th scope="col">Year</th>
+                                            <th scope="col">Make</th>
+                                            <th scope="col">Model</th>
+                                            <th scope="col">Lic.Plate</th>
+                                            <th scope="col">VIN</th>
                                             <th scope="col">Last Service</th>
                                             <th scope="col">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>555-111</td>
-                                            <td>testemail@gmail.com</td>
-                                            <td>Feb, 30, 2022</td>
+                                            <td>1985</td>
+                                            <td>Delorean</td>
+                                            <td>ABC123</td>
+                                            <td>ABC123</td>
+                                            <td>5TEWN72N63Z275910</td>
+                                            <td>Jun 27, 2019</td>
                                             <td>
-                                                <button class="btn btn-primary" @click="toggleCustomerSelected" data-bs-toggle="modal">
+                                                <button class="btn btn-primary" data-bs-toggle="modal" @click="toggleVehicleSelected">
                                                     <i class="fa-solid fa-circle-plus"></i>
                                                     Choose
                                                 </button>
                                             </td>
                                         </tr>
                                     </tbody>
-                                </table>
+                                </table>       
+
                             </div>
-                            <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
-                                <div class="moda-body">
-                                    <h5 class="my-3">Quick Add Customer</h5>
+                            <div class="tab-pane fade" id="newVehicle" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+                                <div class="modal-body">
                                     <form action="">
                                         <div class="row">
                                             <div class="col-4">
@@ -312,59 +453,7 @@
                                     </div>    
                                 </div>
                             </div>
-                        </div>
-                    </div>  
-                </div>
-            </div>
-        </div>
-        <div class="modal fade" id="VehicleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <div class="row g-2">
-                            <div class="col-4">
-                                <h5 class="modal-title" id="exampleModalLabel"><i class="fa-solid fa-user bg-light mx-2"></i>Vehicle Modal</h5>
-                            </div>
-                            <div class="col-5">
-                                <input type="text" class="form-control" placeholder="Search...">
-                            </div>
-                            <div class="col-3 d-flex justify-content-end">
-                                <button class="btn btn-primary" data-bs-target="#QuickAddVehicle" data-bs-toggle="modal">
-                                    <i class="fa-solid fa-circle-plus"></i>
-                                    Quick Add Vehicle
-                                </button>
-                            </div>
-                        </div>
-                        <hr>
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Year</th>
-                                    <th scope="col">Make</th>
-                                    <th scope="col">Model</th>
-                                    <th scope="col">Lic.Plate</th>
-                                    <th scope="col">VIN</th>
-                                    <th scope="col">Last Service</th>
-                                    <th scope="col">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1985</td>
-                                    <td>Delorean</td>
-                                    <td>ABC123</td>
-                                    <td>ABC123</td>
-                                    <td>5TEWN72N63Z275910</td>
-                                    <td>Jun 27, 2019</td>
-                                    <td>
-                                        <button class="btn btn-primary" data-bs-toggle="modal" @click="toggleVehicleSelected">
-                                            <i class="fa-solid fa-circle-plus"></i>
-                                            Choose
-                                        </button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>                                        
+                        </div>                                 
                     </div>
                 </div>
             </div>
@@ -394,77 +483,6 @@
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalToggleLabel2"><i class="fa-solid fa-user mx-1"></i>Quick Add Customer</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form action="">
-                        <div class="row">
-                            <div class="col-4">
-                                <div class="mb-3">
-                                    <label for="FirstName" class="form-label">Customer Type</label>
-                                    <select class="form-select" aria-label="Default select example">
-                                        <option selected>Select Customer Type</option>
-                                        <option value="1">Person</option>
-                                        <option value="2">Company</option>
-                                    </select>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="FirstName" class="form-label">First Name</label>
-                                    <input type="text" class="form-control" id="FirstName" placeholder="First Name">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="FirstName" class="form-label">Address</label>
-                                    <input type="text" class="form-control" id="Address" placeholder="Address">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="FirstName" class="form-label">Country</label>
-                                    <select class="form-select" aria-label="Default select example">
-                                        <option selected>Select Country</option>
-                                        <option value="1">USA</option>
-                                        <option value="2">Canada</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <div class="mb-3">
-                                    <label for="FirstName" class="form-label">Company Name</label>
-                                    <input type="text" class="form-control" id="CompanyName" placeholder="Company Name">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="LastName" class="form-label">Last Name</label>
-                                    <input type="text" class="form-control" id="LastName" placeholder="Last Name">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="FirstName" class="form-label">City</label>
-                                    <input type="text" class="form-control" id="City" placeholder="City">
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <div class="mb-3">
-                                    <label for="FirstName" class="form-label">Phone</label>
-                                    <input type="text" class="form-control" id="Phone" placeholder="Phone">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="FirstName" class="form-label">Email</label>
-                                    <input type="text" class="form-control" id="Email" placeholder="Email">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="ZipCode" class="form-label">ZIP / Postal Code</label>
-                                    <input type="text" class="form-control" id="ZipCode" placeholder="ZIP / Postal Code">
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                    <hr>
-                    <div class="text-center">
-                        <button type="button" class="btn btn-primary me-2">
-                            <i class="fa-solid fa-floppy-disk me-1"></i>
-                            Save Customer
-                        </button>
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                            <i class="fa-solid fa-trash me-1"></i>
-                            Close
-                        </button>
-                    </div>    
                 </div>
             </div>
         </div>
