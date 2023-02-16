@@ -144,11 +144,17 @@
                                 <th scope="col">In Stock</th>
                             </tr>
                         </thead>
-                        <tbody>
-
+                        <tbody>        
                         </tbody>
                     </table>
-
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <button class="btn btn-primary shadow-sm" data-bs-toggle="modal" data-bs-target="#addProductModal">
+                                <i class="fa-solid fa-circle-plus"></i>
+                                Add Product
+                            </button>
+                        </div>
+                    </div>
                 </form>
             </div>
             <!-- Card Detail -->
@@ -387,25 +393,33 @@
                                         <div class="row">
                                             <div class="col-4">
                                                 <div class="mb-3">
-                                                    <label for="FirstName" class="form-label">Customer Type</label>
+                                                    <label for="FirstName" class="form-label">Year</label>
                                                     <select class="form-select" aria-label="Default select example">
-                                                        <option selected>Select Customer Type</option>
-                                                        <option value="1">Person</option>
-                                                        <option value="2">Company</option>
+                                                        <option selected>Select Year</option>
+                                                        <option value="1">2022</option>
+                                                        <option value="2">2021</option>
                                                     </select>
                                                 </div>
                                                 <div class="mb-3">
-                                                    <label for="FirstName" class="form-label">First Name</label>
-                                                    <input type="text" class="form-control" id="FirstName" placeholder="First Name">
-                                                </div>
-                                                <div class="mb-3">
-                                                    <label for="FirstName" class="form-label">Address</label>
-                                                    <input type="text" class="form-control" id="Address" placeholder="Address">
-                                                </div>
-                                                <div class="mb-3">
-                                                    <label for="FirstName" class="form-label">Country</label>
+                                                    <label for="FirstName" class="form-label">Color</label>
                                                     <select class="form-select" aria-label="Default select example">
-                                                        <option selected>Select Country</option>
+                                                        <option selected>Select Color</option>
+                                                        <option value="1">Black</option>
+                                                        <option value="2">White</option>
+                                                    </select>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="FirstName" class="form-label">Setup</label>
+                                                    <select class="form-select" aria-label="Default select example">
+                                                        <option selected>Squared / Staggered</option>
+                                                        <option value="1">Squared</option>
+                                                        <option value="2">Staggered</option>
+                                                    </select>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="FirstName" class="form-label">Wheels</label>
+                                                    <select class="form-select" aria-label="Default select example">
+                                                        <option selected>Select Wheels</option>
                                                         <option value="1">USA</option>
                                                         <option value="2">Canada</option>
                                                     </select>
@@ -413,31 +427,37 @@
                                             </div>
                                             <div class="col-4">
                                                 <div class="mb-3">
-                                                    <label for="FirstName" class="form-label">Company Name</label>
-                                                    <input type="text" class="form-control" id="CompanyName" placeholder="Company Name">
+                                                    <label for="FirstName" class="form-label">Make</label>
+                                                    <select class="form-select" aria-label="Default select example">
+                                                        <option selected>Select Make</option>
+                                                        <option value="1">HONDA</option>
+                                                        <option value="2">...</option>
+                                                    </select>
                                                 </div>
                                                 <div class="mb-3">
-                                                    <label for="LastName" class="form-label">Last Name</label>
-                                                    <input type="text" class="form-control" id="LastName" placeholder="Last Name">
+                                                    <label for="FirstName" class="form-label">Lic. Plate</label>
+                                                    <input type="text" class="form-control" placeholder="Lic. Plate">    
                                                 </div>
                                                 <div class="mb-3">
-                                                    <label for="FirstName" class="form-label">City</label>
-                                                    <input type="text" class="form-control" id="City" placeholder="City">
+                                                    <label for="FirstName" class="form-label">Front Tire Size</label>
+                                                    <select class="form-select" aria-label="Default select example">
+                                                        <option selected>Select Make</option>
+                                                        <option value="1">HONDA</option>
+                                                        <option value="2">...</option>
+                                                    </select>
                                                 </div>
                                             </div>
                                             <div class="col-4">
                                                 <div class="mb-3">
-                                                    <label for="FirstName" class="form-label">Phone</label>
-                                                    <input type="text" class="form-control" id="Phone" placeholder="Phone">
+                                                    <label for="FirstName" class="form-label">Model</label>
+                                                    <select class="form-select" aria-label="Default select example">
+                                                        <option selected>Select Make</option>
+                                                        <option value="1">HONDA</option>
+                                                        <option value="2">...</option>
+                                                    </select>
                                                 </div>
-                                                <div class="mb-3">
-                                                    <label for="FirstName" class="form-label">Email</label>
-                                                    <input type="text" class="form-control" id="Email" placeholder="Email">
-                                                </div>
-                                                <div class="mb-3">
-                                                    <label for="ZipCode" class="form-label">ZIP / Postal Code</label>
-                                                    <input type="text" class="form-control" id="ZipCode" placeholder="ZIP / Postal Code">
-                                                </div>
+
+
                                             </div>
                                         </div>
                                     </form>
@@ -561,7 +581,226 @@
             </div>
         </div>
     </div>
+    <!-----Add Product------>
+    <div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">
+                    <i class="fa-solid fa-cart-shopping me-1"></i>
+                    Add Product
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#tire-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Tire</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#wheels-tab-pane" type="button" role="tab" aria-controls="wheels-tab-pane" aria-selected="false">Wheels</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#hardware-tab-pane" type="button" role="tab" aria-controls="hardware-tab-pane" aria-selected="false">Hardware</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#service-tab-pane" type="button" role="tab" aria-controls="service-tab-pane" aria-selected="false">Service</button>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="tire-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                        <div class="modal-body">
 
+                            <form>
+                                <div class="row">
+                                    <div class="col-3">
+                                        <div class="mb-3">
+                                            <label for="quickSearch" class="form-label">Quick Search</label>
+                                            <input type="text" class="form-control" id="quickSearch" placeholder="...">
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="mb-3">
+                                            <label for="brand" class="form-label">Tread Width</label>
+                                            <select class="form-select" aria-label="Default select example">
+                                                <option selected>Select Width</option>
+                                                <option value="1">111</option>
+                                                <option value="2">222</option>
+                                                <option value="3">333</option>
+                                                <option value="4">444</option>
+                                                <option value="5">555</option>
+                                                <option value="6">666</option>
+                                                <option value="7">777</option>
+                                                <option value="8">888</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="mb-3">
+                                            <label for="brand" class="form-label">Aspect Ratio</label>
+                                            <select class="form-select" aria-label="Default select example">
+                                                <option selected>Select Ratio</option>
+                                                <option value="1">111</option>
+                                                <option value="2">222</option>
+                                                <option value="3">333</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="mb-3">
+                                            <label for="rimSize" class="form-label">Rim Size</label>
+                                            <select class="form-select" aria-label="Default select example">
+                                                <option selected>Select Rim Size</option>
+                                                <option value="1">111</option>
+                                                <option value="2">222</option>
+                                                <option value="3">333</option>
+                                            </select>    
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="mb-3">
+                                            <label for="rimSize" class="form-label">Tire Type</label>
+                                            <select class="form-select" aria-label="Default select example">
+                                                <option selected>Select Type</option>
+                                                <option value="1">Type 1</option>
+                                                <option value="2">Type 2</option>
+                                                <option value="3">Type 3</option>
+                                                <option value="4">Type 4</option>
+                                            </select>    
+                                        </div>
+                                    </div>
+                                    <div class="col-1">
+                                        <label for="rimSize" class="form-label">Search</label>
+                                        <button class="btn btn-primary form-control" id="searchButton">
+                                            <i class="fa-solid fa-search"></i>
+                                        </button>
+                                    </div>
+                                    <div class="col-2">
+                                        <a href="#" class="text-primary" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">Expanded Search</a>
+                                    </div>
+                                </div>
+                                <div class="row collapse mt-2" id="collapseWidthExample">
+                                    <div class="col-2">
+                                        <div class="mb-3">
+                                            <label for="brand" class="form-label">Speed Rating</label>
+                                            <select class="form-select" aria-label="Default select example">
+                                                <option selected>Select Rating</option>
+                                                <option value="1">111</option>
+                                                <option value="2">222</option>
+                                                <option value="3">333</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="mb-3">
+                                            <label for="brand" class="form-label">Load Index</label>
+                                            <select class="form-select" aria-label="Default select example">
+                                                <option selected>Select Load Index</option>
+                                                <option value="1">111</option>
+                                                <option value="2">222</option>
+                                                <option value="3">333</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="mb-3">
+                                            <label for="brand" class="form-label">Brand</label>
+                                            <select class="form-select" aria-label="Default select example">
+                                                <option selected>Select Brand</option>
+                                                <option value="1">Toyota</option>
+                                                <option value="2">Chevrolet</option>
+                                                <option value="3">Ford</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="mb-3">
+                                            <label for="brand" class="form-label">Product Line</label>
+                                            <select class="form-select" aria-label="Default select example">
+                                                <option selected>Select Model</option>
+                                                <option value="1">111</option>
+                                                <option value="2">222</option>
+                                                <option value="3">333</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="mb-3">
+                                            <label for="brand" class="form-label">Tire Sub Type</label>
+                                            <select class="form-select" aria-label="Default select example">
+                                                <option selected>Select Model</option>
+                                                <option value="1">111</option>
+                                                <option value="2">222</option>
+                                                <option value="3">333</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <hr>
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Sku</th>
+                                        <th scope="col">Description</th>
+                                        <th scope="col">OEM</th>
+                                        <th scope="col">Treadwear</th>
+                                        <th scope="col">Hazzard</th>
+                                        <th scope="col">MSRP</th>
+                                        <th scope="col">Price</th>
+                                        <th scope="col">Promo</th>
+                                        <th scope="col">Stock</th>
+                                        <th scope="col">QTY</th>
+                                        <th scope="col">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">50649</th>
+                                        <td class="text-truncate">215/50R17 MICHELIN X-ICE SNOW 95H XL</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>60.000 km</td>
+                                        <td>285.00</td>
+                                        <td></td>
+                                        <td class="text-success">279.99</td>
+                                        <td>20</td>
+                                        <td>
+                                            <input type="number" class="form-control-sm" style="max-width:70px">
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-primary">
+                                                <i class="fa-solid fa-plus"></i>
+                                            </button>
+                                        </td>    
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="wheels-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+
+
+                    </div>
+                    <div class="tab-pane fade" id="hardware-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+
+
+                    </div>
+                    <div class="tab-pane fade" id="service-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+            </div>
+        </div>
+    </div>
 </template>
 
 <script>
