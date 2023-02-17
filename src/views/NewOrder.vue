@@ -134,17 +134,29 @@
                             <tr>
                                 <th scope="col">SKU</th>
                                 <th scope="col">Description</th>
-                                <th scope="col">Qty</th>
                                 <th scope="col">Price Level</th>
                                 <th scope="col">Unit</th>
                                 <th scope="col">Disc ($)</th>
                                 <th scope="col">Disc (%)</th>
+                                <th scope="col">Qty</th>
                                 <th scope="col">Amount</th>
                                 <th scope="col">Tax</th>
                                 <th scope="col">In Stock</th>
                             </tr>
                         </thead>
                         <tbody>        
+                            <tr v-if="productSelected">
+                                <td scope="row">50649</td>
+                                <td class="text-truncate">215/50R17 MICHELIN X-ICE SNOW 95H XL</td>
+                                <td>Retail</td>
+                                <td>285.00</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>285.00 $</td>
+                                <td></td>
+                                <td>20</td>
+                            </tr>
                         </tbody>
                     </table>
                     <div class="row">
@@ -182,6 +194,16 @@
                                 <h6 class="align-self-start">Total:</h6>
                                 <h6 class="align-self-center" style="max-width: 150px">0.00</h6>
                             </div>     
+                        </div>
+                        <div class="text-center my-2">
+                            <button class="btn btn-primary">
+                                <i class="fa-solid fa-save me-1"></i>
+                                Save Order
+                            </button>
+                            <button class="btn btn-outline-secondary ms-2">
+                                <i class="fa-solid fa-trash-can me-1"></i>
+                                Cancel
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -617,7 +639,7 @@
                                     <div class="col-3">
                                         <div class="mb-3">
                                             <label for="quickSearch" class="form-label">Quick Search</label>
-                                            <input type="text" class="form-control" id="quickSearch" placeholder="...">
+                                            <input type="text" class="form-control" id="quickSearch" >
                                         </div>
                                     </div>
                                     <div class="col-2">
@@ -763,14 +785,14 @@
                                         <td></td>
                                         <td>60.000 km</td>
                                         <td>285.00</td>
-                                        <td></td>
-                                        <td class="text-success">279.99</td>
+                                        <td>279.99 $</td>
+                                        <td class="text-success"></td>
                                         <td>20</td>
                                         <td>
-                                            <input type="number" class="form-control-sm" style="max-width:70px">
+                                            <input type="number" class="form-control" style="max-width:70px">
                                         </td>
                                         <td>
-                                            <button class="btn btn-primary">
+                                            <button class="btn btn-primary" @click="toggleProductSelected" data-bs-toggle="modal">
                                                 <i class="fa-solid fa-plus"></i>
                                             </button>
                                         </td>    
@@ -813,6 +835,7 @@ export default {
     setup() {
         const customerSelected = ref(false);
         const vehicleSelected = ref(false);
+        const productSelected = ref(false);
 
         const toggleCustomerSelected = () => {
             customerSelected.value = !customerSelected.value;
@@ -820,12 +843,17 @@ export default {
         const toggleVehicleSelected = () => {
             vehicleSelected.value = !vehicleSelected.value;
         };
+        const toggleProductSelected = () => {
+            productSelected.value = !productSelected.value;
+        };
 
         return {
             customerSelected,
             vehicleSelected,
+            productSelected,
             toggleCustomerSelected,
-            toggleVehicleSelected
+            toggleVehicleSelected,
+            toggleProductSelected
         }
     }
 }
