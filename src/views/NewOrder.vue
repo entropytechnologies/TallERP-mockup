@@ -648,14 +648,15 @@
                                             <label for="brand" class="form-label">Tread Width</label>
                                             <select class="form-select" aria-label="Default select example">
                                                 <option selected>Select Width</option>
-                                                <option value="1">111</option>
-                                                <option value="2">222</option>
-                                                <option value="3">333</option>
-                                                <option value="4">444</option>
-                                                <option value="5">555</option>
-                                                <option value="6">666</option>
-                                                <option value="7">777</option>
-                                                <option value="8">888</option>
+                                                <option value="10">10</option>
+                                                <option value="11">11</option>
+                                                <option value="115">115</option>
+                                                <option value="12">12</option>
+                                                <option value="125">125</option>
+                                                <option value="13">13</option>
+                                                <option value="135">135</option>
+                                                <option value="14">14</option>
+                                                <option value="145">145</option>
                                             </select>
                                         </div>
                                     </div>
@@ -686,10 +687,12 @@
                                             <label for="rimSize" class="form-label">Tire Type</label>
                                             <select class="form-select" aria-label="Default select example">
                                                 <option selected>Select Type</option>
-                                                <option value="1">Type 1</option>
-                                                <option value="2">Type 2</option>
-                                                <option value="3">Type 3</option>
-                                                <option value="4">Type 4</option>
+                                                <option value="all_season">All Season</option>
+                                                <option value="all_weather">All Weather</option>
+                                                <option value="service">SERVICE</option>
+                                                <option value="summer">Summer</option>
+                                                <option value="temporary/compact_spare">Temporary/Compact Spare</option>
+                                                <option value="winter">Winter</option>
                                             </select>    
                                         </div>
                                     </div>
@@ -731,9 +734,12 @@
                                             <label for="brand" class="form-label">Brand</label>
                                             <select class="form-select" aria-label="Default select example">
                                                 <option selected>Select Brand</option>
-                                                <option value="1">Toyota</option>
-                                                <option value="2">Chevrolet</option>
-                                                <option value="3">Ford</option>
+                                                <option value="aeolus">AEOLUS</option>
+                                                <option value="antares">ANTARES</option>
+                                                <option value="bfgoodrich">BFGOODRICH</option>
+                                                <option value="bridgestone">BRIDGESTONE</option>
+                                                <option value="carlisle">CARLISLE</option>
+                                                <option value="continental">CONTINENTAL</option>
                                             </select>
                                         </div>
                                     </div>
@@ -819,12 +825,12 @@
                                             <label for="width" class="form-label">Width</label>
                                             <select class="form-select" aria-label="Default select example">
                                                 <option selected>Select Width</option>
-                                                <option value="1">10</option>
-                                                <option value="2">10.5</option>
-                                                <option value="3">11</option>
-                                                <option value="4">11.5</option>
-                                                <option value="5">12</option>
-                                                <option value="6">14</option>
+                                                <option value="10">10</option>
+                                                <option value="10.5">10.5</option>
+                                                <option value="11">11</option>
+                                                <option value="11.5">11.5</option>
+                                                <option value="12">12</option>
+                                                <option value="14">14</option>
                                             </select>
                                         </div>
                                     </div>
@@ -833,9 +839,9 @@
                                             <label for="offset" class="form-label">Offset</label>
                                             <select class="form-select" aria-label="Default select example">
                                                 <option selected>Select Offset</option>
-                                                <option value="1">+40</option>
-                                                <option value="2">-1</option>
-                                                <option value="3">-10</option>
+                                                <option value="+40">+40</option>
+                                                <option value="-1">-1</option>
+                                                <option value="-10">-10</option>
                                             </select>
                                         </div>
                                     </div>
@@ -952,8 +958,8 @@
                                             <label for="fastenerType" class="form-label">Fastener Type</label>
                                             <select class="form-select" aria-label="Default select example">
                                                 <option selected>Select....</option>
-                                                <option value="1">Bolt</option>
-                                                <option value="2">Nut</option>
+                                                <option value="bolt">Bolt</option>
+                                                <option value="nut">Nut</option>
                                             </select>
                                         </div>
                                     </div>
@@ -962,12 +968,12 @@
                                             <label for="threadPitch" class="form-label">Thread Pitch</label>
                                             <select class="form-select" aria-label="Default select example">
                                                 <option selected>Select...</option>
-                                                <option value="1">1/2"</option>
-                                                <option value="2">1/2"-20</option>
-                                                <option value="3">12X1.25</option>
-                                                <option value="3">12X1.50</option>
-                                                <option value="3">12X1.75</option>
-                                                <option value="3">14X5</option>
+                                                <option value="1/2">1/2"</option>
+                                                <option value="1/2-20">1/2"-20</option>
+                                                <option value="12x1.25">12X1.25</option>
+                                                <option value="12x1.50">12X1.50</option>
+                                                <option value="12x1.75">12X1.75</option>
+                                                <option value="14x5">14X5</option>
                                             </select>
                                         </div>
                                     </div>
@@ -976,11 +982,11 @@
                                             <label for="sealType" class="form-label">Seal Type</label>
                                             <select class="form-select" aria-label="Default select example">
                                                 <option selected>Select...</option>
-                                                <option value="1">Ball</option>
-                                                <option value="2">Ball/R14</option>
-                                                <option value="3">Conical</option>
-                                                <option value="3">Mag</option>
-                                                <option value="3">Mag with Washer</option>
+                                                <option value="ball">Ball</option>
+                                                <option value="ball/r14">Ball/R14</option>
+                                                <option value="conical">Conical</option>
+                                                <option value="mag">Mag</option>
+                                                <option value="mag_with_washer">Mag with Washer</option>
                                             </select>    
                                         </div>
                                     </div>
@@ -989,13 +995,13 @@
                                             <label for="finish" class="form-label">Finish</label>
                                             <select class="form-select" aria-label="Default select example">
                                                 <option selected>Select...</option>
-                                                <option value="1">Alloy</option>
-                                                <option value="2">Aluminum</option>
-                                                <option value="3">Black</option>
-                                                <option value="4">Black Z</option>
-                                                <option value="4">Chrome</option>
-                                                <option value="4">Red</option>
-                                                <option value="4">Zinc</option>
+                                                <option value="alloy">Alloy</option>
+                                                <option value="aluminum">Aluminum</option>
+                                                <option value="black">Black</option>
+                                                <option value="blackZ">Black Z</option>
+                                                <option value="chrome">Chrome</option>
+                                                <option value="red">Red</option>
+                                                <option value="zinc">Zinc</option>
                                             </select>    
                                         </div>
                                     </div>
@@ -1015,8 +1021,8 @@
                                                 <option value="17">17</option>
                                                 <option value="21">21</option>
                                                 <option value="22">22</option>
-                                                <option value="22">6 SPLINE</option>
-                                                <option value="22">7 SPLINE</option>
+                                                <option value="6spline">6 SPLINE</option>
+                                                <option value="7spline">7 SPLINE</option>
                                             </select>
                                         </div>
                                     </div>
@@ -1025,15 +1031,15 @@
                                             <label for="length" class="form-label">Length</label>
                                             <select class="form-select" aria-label="Default select example">
                                                 <option selected>Select...</option>
-                                                <option value="1">17mm</option>
-                                                <option value="2">20mm</option>
-                                                <option value="3">24mm</option>
-                                                <option value="3">25mm</option>
-                                                <option value="3">27.1mm</option>
-                                                <option value="3">27.9mm</option>
-                                                <option value="3">27</option>
-                                                <option value="3">28</option>
-                                                <option value="3">28mm</option>
+                                                <option value="17mm">17mm</option>
+                                                <option value="20mm">20mm</option>
+                                                <option value="24mm">24mm</option>
+                                                <option value="25mm">25mm</option>
+                                                <option value="27.1mm">27.1mm</option>
+                                                <option value="27.9mm">27.9mm</option>
+                                                <option value="27">27</option>
+                                                <option value="28">28</option>
+                                                <option value="28mm">28mm</option>
                                             </select>
                                         </div>
                                     </div>
