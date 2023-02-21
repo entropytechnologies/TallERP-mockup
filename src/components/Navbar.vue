@@ -38,6 +38,7 @@
                             <li><router-link class="dropdown-item" to="/salesorder">Sales Order</router-link></li>
                             <li><router-link class="dropdown-item" to="/newsalesorder">New Sales Order</router-link></li>
                             <li><router-link class="dropdown-item" to="/neworder">New Order Page</router-link></li>
+                            <li><router-link class="dropdown-item" to="/neworderplus">New Order Plus Page</router-link></li>
                         </ul>
                     </li>
                     <li class="nav-item">
