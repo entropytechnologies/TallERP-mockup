@@ -614,8 +614,7 @@
                 </h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
-                
+            <div class="modal-body">      
                 <ul class="nav nav-pills nav-justified" id="myTab" role="tablist">
                     <li class="nav-item" role="presentation">
                         <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#tire-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Tire</button>
@@ -883,9 +882,10 @@
                                                     <div class="mb-3">
                                                         <label for="rimSize" class="form-label">Tire Type</label>
                                                         <select class="form-select" aria-label="Default select example">
-                                                            <option selected>Select Option</option>
-                                                            <option value="all_season">BASE</option>
-                                                            <option value="all_season">A-SPEC</option>
+                                                            <option selected>Select Tire Type</option>
+                                                            <option value="all_season">All Season</option>
+                                                            <option value="all_weather">All Weather</option>
+                                                            <option value="service">Service</option>
                                                         </select>    
                                                     </div>
                                                 </div>
@@ -893,9 +893,11 @@
                                                     <div class="mb-3">
                                                         <label for="rimSize" class="form-label">Brand</label>
                                                         <select class="form-select" aria-label="Default select example">
-                                                            <option selected>Select Option</option>
-                                                            <option value="all_season">BASE</option>
-                                                            <option value="all_season">A-SPEC</option>
+                                                            <option selected>Select Brand</option>
+                                                            <option value="AEOLUS">AEOLUS</option>
+                                                            <option value="ANTARES">ANTARES</option>
+                                                            <option value="BRIDGESTONE">BRIDGESTONE</option>
+                                                            <option value="CARLISLE">CARLISLE</option>
                                                         </select>    
                                                     </div>
                                                 </div>
@@ -957,294 +959,707 @@
                                 </div>                                
                             </div>
                         </div>
-
-
-
-                        <div class="modal-body">
-                        </div>
                     </div>
                     <!-- Wheels Tab -->
                     <div class="tab-pane fade" id="wheels-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
                         <div class="modal-body">
-
-                            <form>
-                                <div class="row">
-                                    <div class="col-3">
-                                        <div class="mb-3">
-                                            <label for="quickSearch" class="form-label">Quick Search</label>
-                                            <input type="text" class="form-control" id="quickSearch" >
-                                        </div>
-                                    </div>
-                                    <div class="col-2">
-                                        <div class="mb-3">
-                                            <label for="width" class="form-label">Width</label>
-                                            <select class="form-select" aria-label="Default select example">
-                                                <option selected>Select Width</option>
-                                                <option value="10">10</option>
-                                                <option value="10.5">10.5</option>
-                                                <option value="11">11</option>
-                                                <option value="11.5">11.5</option>
-                                                <option value="12">12</option>
-                                                <option value="14">14</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-2">
-                                        <div class="mb-3">
-                                            <label for="offset" class="form-label">Offset</label>
-                                            <select class="form-select" aria-label="Default select example">
-                                                <option selected>Select Offset</option>
-                                                <option value="+40">+40</option>
-                                                <option value="-1">-1</option>
-                                                <option value="-10">-10</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-2">
-                                        <div class="mb-3">
-                                            <label for="boltPattern" class="form-label">Bolt Pattern</label>
-                                            <select class="form-select" aria-label="Default select example">
-                                                <option selected>Select Bolt Pattern</option>
-                                                <option value="1">10-225</option>
-                                                <option value="2">10-285</option>
-                                                <option value="3">10-285.75</option>
-                                                <option value="3">3-112</option>
-                                                <option value="3">4-100</option>
-                                            </select>    
-                                        </div>
-                                    </div>
-                                    <div class="col-2">
-                                        <div class="mb-3">
-                                            <label for="hubBore" class="form-label">Hub Bore</label>
-                                            <select class="form-select" aria-label="Default select example">
-                                                <option selected>Select Hub Bore</option>
-                                                <option value="1">100.3</option>
-                                                <option value="2">100.5</option>
-                                                <option value="3">100.6</option>
-                                                <option value="4">106</option>
-                                            </select>    
-                                        </div>
-                                    </div>
-                                    <div class="col-1">
-                                        <label for="search" class="form-label">Search</label>
-                                        <button class="btn btn-primary form-control" id="searchButton">
-                                            <i class="fa-solid fa-search"></i>
-                                        </button>
+                            <ul class="nav nav-tabs justify-content-center" id="thirdTab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="searchWheelBySize-tab" data-bs-toggle="tab" data-bs-target="#searchWheelBySize-tab-pane" type="button" role="tab" aria-controls="SearchWheelBySize-tab-pane" aria-selected="true">
+                                        <img src="https://tirebasics.com/img/single_tire.png" alt="" srcset="">
+                                        Search By Tire Size
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="SearchWheelByVehicle-tab" data-bs-toggle="tab" data-bs-target="#searchWheelByVehicle-tab-pane" type="button" role="tab" aria-controls="SearchWheelByVehicle-tab-pane" aria-selected="false">
+                                        <img src="https://tirebasics.com/img/single_vehicle.png">
+                                        Search By Vehicle
+                                    </button>
+                                </li>
+                            </ul>    
+                            <div class="tab-content" id="thirdTabContent">
+                                <div class="tab-pane fade show active" id="searchWheelBySize-tab-pane" role="tabpanel" aria-labelledby="searchWheelBySize-tab" tabindex="0">
+                                    <div class="modal-body">
+                                        <form>
+                                            <div class="row">
+                                                <div class="col-4">
+                                                    <div class="mb-3">
+                                                        <label for="quickSearch" class="form-label">Quick Search</label>
+                                                        <input type="text" class="form-control" id="quickSearch" >
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div class="mb-3">
+                                                        <label for="brand" class="form-label">Diameter</label>
+                                                        <select class="form-select" aria-label="Default select example">
+                                                            <option selected>Select Diameter</option>
+                                                            <option value="10">10</option>
+                                                            <option value="11">12</option>
+                                                            <option value="115">14</option>
+                                                            <option value="115">15</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div class="mb-3">
+                                                        <label for="brand" class="form-label">Width</label>
+                                                        <select class="form-select" aria-label="Default select example">
+                                                            <option selected>Select Ratio</option>
+                                                            <option value="1">111</option>
+                                                            <option value="2">222</option>
+                                                            <option value="3">333</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div class="mb-3">
+                                                        <label for="rimSize" class="form-label">Offset</label>
+                                                        <select class="form-select" aria-label="Default select example">
+                                                            <option selected>Select Rim Size</option>
+                                                            <option value="1">111</option>
+                                                            <option value="2">222</option>
+                                                            <option value="3">333</option>
+                                                        </select>    
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div class="mb-3">
+                                                        <label for="rimSize" class="form-label">Bolt Pattern</label>
+                                                        <select class="form-select" aria-label="Default select example">
+                                                            <option selected>Select Type</option>
+                                                            <option value="all_season">All Season</option>
+                                                            <option value="all_weather">All Weather</option>
+                                                            <option value="service">SERVICE</option>
+                                                            <option value="summer">Summer</option>
+                                                            <option value="temporary/compact_spare">Temporary/Compact Spare</option>
+                                                            <option value="winter">Winter</option>
+                                                        </select>    
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div class="mb-3">
+                                                        <label for="rimSize" class="form-label">Hub Bore</label>
+                                                        <select class="form-select" aria-label="Default select example">
+                                                            <option selected>Select Type</option>
+                                                            <option value="all_season">All Season</option>
+                                                            <option value="all_weather">All Weather</option>
+                                                            <option value="service">SERVICE</option>
+                                                            <option value="summer">Summer</option>
+                                                            <option value="temporary/compact_spare">Temporary/Compact Spare</option>
+                                                            <option value="winter">Winter</option>
+                                                        </select>    
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="mb-3">
+                                                        <label for="rimSize" class="form-label">Wheel Type</label>
+                                                        <select class="form-select" aria-label="Default select example">
+                                                            <option selected>Select Type</option>
+                                                            <option value="all_season">All Season</option>
+                                                            <option value="all_weather">All Weather</option>
+                                                            <option value="service">SERVICE</option>
+                                                            <option value="summer">Summer</option>
+                                                            <option value="temporary/compact_spare">Temporary/Compact Spare</option>
+                                                            <option value="winter">Winter</option>
+                                                        </select>    
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="mb-3">
+                                                        <label for="rimSize" class="form-label">Brand</label>
+                                                        <select class="form-select" aria-label="Default select example">
+                                                            <option selected>Select Type</option>
+                                                            <option value="all_season">All Season</option>
+                                                            <option value="all_weather">All Weather</option>
+                                                            <option value="service">SERVICE</option>
+                                                            <option value="summer">Summer</option>
+                                                            <option value="temporary/compact_spare">Temporary/Compact Spare</option>
+                                                            <option value="winter">Winter</option>
+                                                        </select>    
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <button class="btn btn-primary form-control" id="searchButton">
+                                                        <i class="fa-solid fa-search me-1"></i>
+                                                        Search
+                                                    </button>
+                                                </div>
+                                                <div class="col-6">
+                                                    <button class="btn btn-secondary form-control" id="searchButton">
+                                                        <i class="fa-solid fa-trash me-1"></i>
+                                                        Clear
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <hr>
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Sku</th>
+                                                    <th scope="col">Description</th>
+                                                    <th scope="col">OEM</th>
+                                                    <th scope="col">Treadwear</th>
+                                                    <th scope="col">Hazzard</th>
+                                                    <th scope="col">MSRP</th>
+                                                    <th scope="col">Price</th>
+                                                    <th scope="col">Promo</th>
+                                                    <th scope="col">Stock</th>
+                                                    <th scope="col">QTY</th>
+                                                    <th scope="col">Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">50649</th>
+                                                    <td class="text-truncate">215/50R17 MICHELIN X-ICE SNOW 95H XL</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td>60.000 km</td>
+                                                    <td>285.00</td>
+                                                    <td>279.99 $</td>
+                                                    <td class="text-success"></td>
+                                                    <td>20</td>
+                                                    <td>
+                                                        <input type="number" class="form-control" style="max-width:70px">
+                                                    </td>
+                                                    <td>
+                                                        <button class="btn btn-primary" @click="toggleProductSelected" data-bs-toggle="modal">
+                                                            <i class="fa-solid fa-plus"></i>
+                                                        </button>
+                                                    </td>    
+                                                </tr>
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
-                                <div class="row mt-2">
-                                    <div class="col-6">
-                                        <div class="mb-3">
-                                            <label for="brand" class="form-label">Wheel Type</label>
-                                            <select class="form-select" aria-label="Default select example">
-                                                <option selected>Select Rating</option>
-                                                <option value="1">Alloy</option>
-                                                <option value="2">Steel</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="mb-3">
-                                            <label for="brand" class="form-label">Brand</label>
-                                            <select class="form-select" aria-label="Default select example">
-                                                <option selected>Select Brand</option>
-                                                <option value="1">ADVENTUS</option>
-                                                <option value="2">AKITA</option>
-                                                <option value="3">AMERICAN FORGE</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                            <hr>
-                            <div class="table-responsive">
-
-                                <table class="table table-striped">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Sku</th>
-                                        <th scope="col">Description</th>
-                                        <th scope="col">Diameter</th>
-                                        <th scope="col">Width</th>
-                                        <th scope="col">Bolt Pattern</th>
-                                        <th scope="col">Offset</th>
-                                        <th scope="col">MSRP</th>
-                                        <th scope="col">Price</th>
-                                        <th scope="col">Stock</th>
-                                        <th scope="col">QTY</th>
-                                        <th scope="col">Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row"> FA-141-M</th>
-                                        <td class="text-truncate" style="max-width: 300px;">10X7 4-101.6 FAIRWAY ALLOYS FA141 SHIFT (MACHINED GLOSS BLACK) ALLOY</td>
-                                        <td>10</td>
-                                        <td>7</td>
-                                        <td>4-101.6</td>
-                                        <td>70.7</td>
-                                        <td>$102.00</td>
-                                        <td>279.99$</td>
-                                        <td>5</td>
-                                        <td>
-                                            <input type="number" class="form-control" style="max-width:70px">
-                                        </td>
-                                        <td>
-                                            <button class="btn btn-primary" @click="toggleProductSelected" data-bs-toggle="modal">
-                                                <i class="fa-solid fa-plus"></i>
-                                            </button>
-                                        </td>    
-                                    </tr>
-                                </tbody>
-                            </table>
-
+                                <div class="tab-pane fade" id="searchWheelByVehicle-tab-pane" role="tabpanel" aria-labelledby="SearchWheelByVehicle-tab" tabindex="0">
+                                    <div class="modal-body">
+                                        <form>
+                                            <div class="row">
+                                                <div class="col-4">
+                                                    <div class="mb-3">
+                                                        <label for="brand" class="form-label">Year</label>
+                                                        <select class="form-select" aria-label="Default select example">
+                                                            <option selected>Select Year</option>
+                                                            <option value="10">2023</option>
+                                                            <option value="11">2022</option>
+                                                            <option value="115">2021</option>
+                                                            <option value="12">2020</option>
+                                                            <option value="125">2019</option>
+                                                            <option value="13">2018</option>
+                                                            <option value="135">2017</option>
+                                                            <option value="14">2016</option>
+                                                            <option value="145">2015</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div class="mb-3">
+                                                        <label for="brand" class="form-label">Make</label>
+                                                        <select class="form-select" aria-label="Default select example">
+                                                            <option selected>Select Make</option>
+                                                            <option value="ACURA">ACURA</option>
+                                                            <option value="ALFA ROMEO">ALFA ROMEO</option>
+                                                            <option value="ASTON MARTIN">ASTON MARTIN</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div class="mb-3">
+                                                        <label for="rimSize" class="form-label">Model</label>
+                                                        <select class="form-select" aria-label="Default select example">
+                                                            <option selected>Select Model</option>
+                                                            <option value="ILX">ILX</option>
+                                                            <option value="MDX">MDX</option>
+                                                            <option value="NSX">NSX</option>
+                                                            <option value="RDX">RDX</option>
+                                                            <option value="TLX">TLX</option>
+                                                        </select>    
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="mb-3">
+                                                        <label for="rimSize" class="form-label">Option</label>
+                                                        <select class="form-select" aria-label="Default select example">
+                                                            <option selected>Select Option</option>
+                                                            <option value="all_season">BASE</option>
+                                                            <option value="all_season">A-SPEC</option>
+                                                        </select>    
+                                                    </div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div class="mb-3">
+                                                        <label for="rimSize" class="form-label">Wheel Type</label>
+                                                        <select class="form-select" aria-label="Default select example">
+                                                            <option selected>Select Wheel Type</option>
+                                                            <option value="all_season">Alloy</option>
+                                                            <option value="all_weather">All Steel</option>
+                                                        </select>    
+                                                    </div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div class="mb-3">
+                                                        <label for="rimSize" class="form-label">Brand</label>
+                                                        <select class="form-select" aria-label="Default select example">
+                                                            <option selected>Select Brand</option>
+                                                            <option value="AEOLUS">ADVENTUS</option>
+                                                            <option value="ANTARES">AKITA</option>
+                                                            <option value="BRIDGESTONE">ART</option>
+                                                            <option value="CARLISLE">ATX</option>
+                                                        </select>    
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <button class="btn btn-primary form-control" id="searchButton">
+                                                        <i class="fa-solid fa-search me-1"></i>
+                                                        Search
+                                                    </button>
+                                                </div>
+                                                <div class="col-6">
+                                                    <button class="btn btn-secondary form-control" id="searchButton">
+                                                        <i class="fa-solid fa-trash me-1"></i>
+                                                        Clear
+                                                    </button>
+                                                </div>
+                                            </div>
+    
+                                        </form>
+                                        <hr>
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Sku</th>
+                                                    <th scope="col">Description</th>
+                                                    <th scope="col">OEM</th>
+                                                    <th scope="col">Treadwear</th>
+                                                    <th scope="col">Hazzard</th>
+                                                    <th scope="col">MSRP</th>
+                                                    <th scope="col">Price</th>
+                                                    <th scope="col">Promo</th>
+                                                    <th scope="col">Stock</th>
+                                                    <th scope="col">QTY</th>
+                                                    <th scope="col">Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">50649</th>
+                                                    <td class="text-truncate">215/50R17 MICHELIN X-ICE SNOW 95H XL</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td>60.000 km</td>
+                                                    <td>285.00</td>
+                                                    <td>279.99 $</td>
+                                                    <td class="text-success"></td>
+                                                    <td>20</td>
+                                                    <td>
+                                                        <input type="number" class="form-control" style="max-width:70px">
+                                                    </td>
+                                                    <td>
+                                                        <button class="btn btn-primary" @click="toggleProductSelected" data-bs-toggle="modal">
+                                                            <i class="fa-solid fa-plus"></i>
+                                                        </button>
+                                                    </td>    
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>                                    
+                                </div>                                
                             </div>
                         </div>
                     </div>
                     <!--Hardware Tab -->
                     <div class="tab-pane fade" id="hardware-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
                         <div class="modal-body">
-                            <form>
-                                <div class="row">
-                                    <div class="col-3">
-                                        <div class="mb-3">
-                                            <label for="quickSearch" class="form-label">Quick Search</label>
-                                            <input type="text" class="form-control" id="quickSearch" >
-                                        </div>
-                                    </div>
-                                    <div class="col-2">
-                                        <div class="mb-3">
-                                            <label for="fastenerType" class="form-label">Fastener Type</label>
-                                            <select class="form-select" aria-label="Default select example">
-                                                <option selected>Select....</option>
-                                                <option value="bolt">Bolt</option>
-                                                <option value="nut">Nut</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-2">
-                                        <div class="mb-3">
-                                            <label for="threadPitch" class="form-label">Thread Pitch</label>
-                                            <select class="form-select" aria-label="Default select example">
-                                                <option selected>Select...</option>
-                                                <option value="1/2">1/2"</option>
-                                                <option value="1/2-20">1/2"-20</option>
-                                                <option value="12x1.25">12X1.25</option>
-                                                <option value="12x1.50">12X1.50</option>
-                                                <option value="12x1.75">12X1.75</option>
-                                                <option value="14x5">14X5</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-2">
-                                        <div class="mb-3">
-                                            <label for="sealType" class="form-label">Seal Type</label>
-                                            <select class="form-select" aria-label="Default select example">
-                                                <option selected>Select...</option>
-                                                <option value="ball">Ball</option>
-                                                <option value="ball/r14">Ball/R14</option>
-                                                <option value="conical">Conical</option>
-                                                <option value="mag">Mag</option>
-                                                <option value="mag_with_washer">Mag with Washer</option>
-                                            </select>    
-                                        </div>
-                                    </div>
-                                    <div class="col-2">
-                                        <div class="mb-3">
-                                            <label for="finish" class="form-label">Finish</label>
-                                            <select class="form-select" aria-label="Default select example">
-                                                <option selected>Select...</option>
-                                                <option value="alloy">Alloy</option>
-                                                <option value="aluminum">Aluminum</option>
-                                                <option value="black">Black</option>
-                                                <option value="blackZ">Black Z</option>
-                                                <option value="chrome">Chrome</option>
-                                                <option value="red">Red</option>
-                                                <option value="zinc">Zinc</option>
-                                            </select>    
-                                        </div>
-                                    </div>
-                                    <div class="col-1">
-                                        <label for="search" class="form-label">Search</label>
-                                        <button class="btn btn-primary form-control" id="searchButton">
-                                            <i class="fa-solid fa-search"></i>
-                                        </button>
+                            <ul class="nav nav-tabs justify-content-center b-1" id="thirdTab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="searchHardwareByNuts-tab" data-bs-toggle="tab" data-bs-target="#searchHardwareByNuts-tab-pane" type="button" role="tab" aria-controls="searchHardwareByNuts-tab-pane" aria-selected="true">
+                                        <img src="https://tirebasics.com/img/screw_cropped.png" class="img-fluid" style="height:50px" alt="" srcset="">
+                                        Nuts & Bolts
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="searchWheelByHubRings-tab" data-bs-toggle="tab" data-bs-target="#searchHardwareByHubRings-tab-pane" type="button" role="tab" aria-controls="#searchWheelByHubRings-tab-pane" aria-selected="false">
+                                        <img src="https://tirebasics.com/img/hub_rings.png" class="img-fluid" style="height:50px">
+                                        Search By Hub Rings
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="searchHardwareByTpms-tab" data-bs-toggle="tab" data-bs-target="#searchHardwareByTmps-tab-pane" type="button" role="tab" aria-controls="SearchWheelByVehicle-tab-pane" aria-selected="false">
+                                        <img src="https://tirebasics.com/img/tpms.png" class="img-fluid" style="height:50px">
+                                        Search By TPMS
+                                    </button>
+                                </li>
+                            </ul>    
+                            <div class="tab-content" id="fourthTabContent">
+                                <div class="tab-pane fade show active" id="searchHardwareByNuts-tab-pane" role="tabpanel" aria-labelledby="searchHardwareByNuts-tab" tabindex="0">
+                                    <div class="modal-body">
+                                        <form>
+                                            <div class="row">
+                                                <div class="col-4">
+                                                    <div class="mb-3">
+                                                        <label for="quickSearch" class="form-label">Quick Search</label>
+                                                        <input type="text" class="form-control" id="quickSearch" >
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div class="mb-3">
+                                                        <label for="brand" class="form-label">Diameter</label>
+                                                        <select class="form-select" aria-label="Default select example">
+                                                            <option selected>Select Diameter</option>
+                                                            <option value="10">10</option>
+                                                            <option value="11">12</option>
+                                                            <option value="115">14</option>
+                                                            <option value="115">15</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div class="mb-3">
+                                                        <label for="brand" class="form-label">Width</label>
+                                                        <select class="form-select" aria-label="Default select example">
+                                                            <option selected>Select Ratio</option>
+                                                            <option value="1">111</option>
+                                                            <option value="2">222</option>
+                                                            <option value="3">333</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div class="mb-3">
+                                                        <label for="rimSize" class="form-label">Offset</label>
+                                                        <select class="form-select" aria-label="Default select example">
+                                                            <option selected>Select Rim Size</option>
+                                                            <option value="1">111</option>
+                                                            <option value="2">222</option>
+                                                            <option value="3">333</option>
+                                                        </select>    
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div class="mb-3">
+                                                        <label for="rimSize" class="form-label">Bolt Pattern</label>
+                                                        <select class="form-select" aria-label="Default select example">
+                                                            <option selected>Select Type</option>
+                                                            <option value="all_season">All Season</option>
+                                                            <option value="all_weather">All Weather</option>
+                                                            <option value="service">SERVICE</option>
+                                                            <option value="summer">Summer</option>
+                                                            <option value="temporary/compact_spare">Temporary/Compact Spare</option>
+                                                            <option value="winter">Winter</option>
+                                                        </select>    
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div class="mb-3">
+                                                        <label for="rimSize" class="form-label">Hub Bore</label>
+                                                        <select class="form-select" aria-label="Default select example">
+                                                            <option selected>Select Type</option>
+                                                            <option value="all_season">All Season</option>
+                                                            <option value="all_weather">All Weather</option>
+                                                            <option value="service">SERVICE</option>
+                                                            <option value="summer">Summer</option>
+                                                            <option value="temporary/compact_spare">Temporary/Compact Spare</option>
+                                                            <option value="winter">Winter</option>
+                                                        </select>    
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="mb-3">
+                                                        <label for="rimSize" class="form-label">Wheel Type</label>
+                                                        <select class="form-select" aria-label="Default select example">
+                                                            <option selected>Select Type</option>
+                                                            <option value="all_season">All Season</option>
+                                                            <option value="all_weather">All Weather</option>
+                                                            <option value="service">SERVICE</option>
+                                                            <option value="summer">Summer</option>
+                                                            <option value="temporary/compact_spare">Temporary/Compact Spare</option>
+                                                            <option value="winter">Winter</option>
+                                                        </select>    
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="mb-3">
+                                                        <label for="rimSize" class="form-label">Brand</label>
+                                                        <select class="form-select" aria-label="Default select example">
+                                                            <option selected>Select Type</option>
+                                                            <option value="all_season">All Season</option>
+                                                            <option value="all_weather">All Weather</option>
+                                                            <option value="service">SERVICE</option>
+                                                            <option value="summer">Summer</option>
+                                                            <option value="temporary/compact_spare">Temporary/Compact Spare</option>
+                                                            <option value="winter">Winter</option>
+                                                        </select>    
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <button class="btn btn-primary form-control" id="searchButton">
+                                                        <i class="fa-solid fa-search me-1"></i>
+                                                        Search
+                                                    </button>
+                                                </div>
+                                                <div class="col-6">
+                                                    <button class="btn btn-secondary form-control" id="searchButton">
+                                                        <i class="fa-solid fa-trash me-1"></i>
+                                                        Clear
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <hr>
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Sku</th>
+                                                    <th scope="col">Description</th>
+                                                    <th scope="col">OEM</th>
+                                                    <th scope="col">Treadwear</th>
+                                                    <th scope="col">Hazzard</th>
+                                                    <th scope="col">MSRP</th>
+                                                    <th scope="col">Price</th>
+                                                    <th scope="col">Promo</th>
+                                                    <th scope="col">Stock</th>
+                                                    <th scope="col">QTY</th>
+                                                    <th scope="col">Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">50649</th>
+                                                    <td class="text-truncate">215/50R17 MICHELIN X-ICE SNOW 95H XL</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td>60.000 km</td>
+                                                    <td>285.00</td>
+                                                    <td>279.99 $</td>
+                                                    <td class="text-success"></td>
+                                                    <td>20</td>
+                                                    <td>
+                                                        <input type="number" class="form-control" style="max-width:70px">
+                                                    </td>
+                                                    <td>
+                                                        <button class="btn btn-primary" @click="toggleProductSelected" data-bs-toggle="modal">
+                                                            <i class="fa-solid fa-plus"></i>
+                                                        </button>
+                                                    </td>    
+                                                </tr>
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
-                                <div class="row mt-2">
-                                    <div class="col-6">
-                                        <div class="mb-3">
-                                            <label for="hex" class="form-label">Hex</label>
-                                            <select class="form-select" aria-label="Default select example">
-                                                <option selected>Select...</option>
-                                                <option value="17">17</option>
-                                                <option value="21">21</option>
-                                                <option value="22">22</option>
-                                                <option value="6spline">6 SPLINE</option>
-                                                <option value="7spline">7 SPLINE</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="mb-3">
-                                            <label for="length" class="form-label">Length</label>
-                                            <select class="form-select" aria-label="Default select example">
-                                                <option selected>Select...</option>
-                                                <option value="17mm">17mm</option>
-                                                <option value="20mm">20mm</option>
-                                                <option value="24mm">24mm</option>
-                                                <option value="25mm">25mm</option>
-                                                <option value="27.1mm">27.1mm</option>
-                                                <option value="27.9mm">27.9mm</option>
-                                                <option value="27">27</option>
-                                                <option value="28">28</option>
-                                                <option value="28mm">28mm</option>
-                                            </select>
-                                        </div>
-                                    </div>
+                                <div class="tab-pane fade" id="searchHardwareByHubRings-tab-pane" role="tabpanel" aria-labelledby="SearchHardwareByHubRings-tab" tabindex="0">
+                                    <div class="modal-body">
+                                        <form>
+                                            <div class="row">
+                                                <div class="col-4">
+                                                    <div class="mb-3">
+                                                        <label for="brand" class="form-label">Year</label>
+                                                        <select class="form-select" aria-label="Default select example">
+                                                            <option selected>Select Year</option>
+                                                            <option value="10">2023</option>
+                                                            <option value="11">2022</option>
+                                                            <option value="115">2021</option>
+                                                            <option value="12">2020</option>
+                                                            <option value="125">2019</option>
+                                                            <option value="13">2018</option>
+                                                            <option value="135">2017</option>
+                                                            <option value="14">2016</option>
+                                                            <option value="145">2015</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div class="mb-3">
+                                                        <label for="brand" class="form-label">Make</label>
+                                                        <select class="form-select" aria-label="Default select example">
+                                                            <option selected>Select Make</option>
+                                                            <option value="ACURA">ACURA</option>
+                                                            <option value="ALFA ROMEO">ALFA ROMEO</option>
+                                                            <option value="ASTON MARTIN">ASTON MARTIN</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div class="mb-3">
+                                                        <label for="rimSize" class="form-label">Model</label>
+                                                        <select class="form-select" aria-label="Default select example">
+                                                            <option selected>Select Model</option>
+                                                            <option value="ILX">ILX</option>
+                                                            <option value="MDX">MDX</option>
+                                                            <option value="NSX">NSX</option>
+                                                            <option value="RDX">RDX</option>
+                                                            <option value="TLX">TLX</option>
+                                                        </select>    
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="mb-3">
+                                                        <label for="rimSize" class="form-label">Option</label>
+                                                        <select class="form-select" aria-label="Default select example">
+                                                            <option selected>Select Option</option>
+                                                            <option value="all_season">BASE</option>
+                                                            <option value="all_season">A-SPEC</option>
+                                                        </select>    
+                                                    </div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div class="mb-3">
+                                                        <label for="rimSize" class="form-label">Wheel Type</label>
+                                                        <select class="form-select" aria-label="Default select example">
+                                                            <option selected>Select Wheel Type</option>
+                                                            <option value="all_season">Alloy</option>
+                                                            <option value="all_weather">All Steel</option>
+                                                        </select>    
+                                                    </div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div class="mb-3">
+                                                        <label for="rimSize" class="form-label">Brand</label>
+                                                        <select class="form-select" aria-label="Default select example">
+                                                            <option selected>Select Brand</option>
+                                                            <option value="AEOLUS">ADVENTUS</option>
+                                                            <option value="ANTARES">AKITA</option>
+                                                            <option value="BRIDGESTONE">ART</option>
+                                                            <option value="CARLISLE">ATX</option>
+                                                        </select>    
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <button class="btn btn-primary form-control" id="searchButton">
+                                                        <i class="fa-solid fa-search me-1"></i>
+                                                        Search
+                                                    </button>
+                                                </div>
+                                                <div class="col-6">
+                                                    <button class="btn btn-secondary form-control" id="searchButton">
+                                                        <i class="fa-solid fa-trash me-1"></i>
+                                                        Clear
+                                                    </button>
+                                                </div>
+                                            </div>
+    
+                                        </form>
+                                        <hr>
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Sku</th>
+                                                    <th scope="col">Description</th>
+                                                    <th scope="col">OEM</th>
+                                                    <th scope="col">Treadwear</th>
+                                                    <th scope="col">Hazzard</th>
+                                                    <th scope="col">MSRP</th>
+                                                    <th scope="col">Price</th>
+                                                    <th scope="col">Promo</th>
+                                                    <th scope="col">Stock</th>
+                                                    <th scope="col">QTY</th>
+                                                    <th scope="col">Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">50649</th>
+                                                    <td class="text-truncate">215/50R17 MICHELIN X-ICE SNOW 95H XL</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td>60.000 km</td>
+                                                    <td>285.00</td>
+                                                    <td>279.99 $</td>
+                                                    <td class="text-success"></td>
+                                                    <td>20</td>
+                                                    <td>
+                                                        <input type="number" class="form-control" style="max-width:70px">
+                                                    </td>
+                                                    <td>
+                                                        <button class="btn btn-primary" @click="toggleProductSelected" data-bs-toggle="modal">
+                                                            <i class="fa-solid fa-plus"></i>
+                                                        </button>
+                                                    </td>    
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>                                    
                                 </div>
-                            </form>
-                            <hr>
-                            <div class="table-responsive">
-                                <table class="table table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">Sku</th>
-                                            <th scope="col">Description</th>
-                                            <th scope="col">Fastener Type</th>
-                                            <th scope="col">Thread Pitch</th>
-                                            <th scope="col">Seat Type</th>
-                                            <th scope="col">Finish</th>
-                                            <th scope="col">Price</th>
-                                            <th scope="col">Length</th>
-                                            <th scope="col">Stock</th>
-                                            <th scope="col">QTY</th>
-                                            <th scope="col">Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">DA83414CH</th>
-                                            <td class="text-truncate" style="max-width:300px">215/50R17 MICHELIN X-ICE SNOW 95H XL</td>
-                                            <td>Bolt</td>
-                                            <td>14X1.25</td>
-                                            <td>CONICAL</td>
-                                            <td>Chrome</td>
-                                            <td>279.99 $</td>
-                                            <td>40mm</td>
-                                            <td>20</td>
-                                            <td>
-                                                <input type="number" class="form-control" style="max-width:70px">
-                                            </td>
-                                            <td>
-                                                <button class="btn btn-primary" @click="toggleProductSelected" data-bs-toggle="modal">
-                                                    <i class="fa-solid fa-plus"></i>
-                                                </button>
-                                            </td>    
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                                <div class="tab-pane fade" id="searchHardwareByTmps-tab-pane" role="tabpanel" aria-labelledby="SearchHardwareByTmps-tab" tabindex="0">
+                                    <div class="modal-body">
+                                        <form>
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <div class="mb-3">
+                                                        <label for="brand" class="form-label">Search</label>
+                                                        <input class="form-control" aria-label="Default select example">
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="mb-3">
+                                                        <label for="brand" class="form-label">Brand/Model</label>
+                                                        <select class="form-select" aria-label="Default select example">
+                                                            <option selected>Select Brand</option>
+                                                            <option value="ACURA">AUTEL</option>
+                                                            <option value="ALFA ROMEO">CARLISLE</option>
+                                                            <option value="ASTON MARTIN">Coyote</option>
+                                                            <option value="ASTON MARTIN">DAI</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <button class="btn btn-primary form-control" id="searchButton">
+                                                        <i class="fa-solid fa-search me-1"></i>
+                                                        Search
+                                                    </button>
+                                                </div>
+                                                <div class="col-6">
+                                                    <button class="btn btn-secondary form-control" id="searchButton">
+                                                        <i class="fa-solid fa-trash me-1"></i>
+                                                        Clear
+                                                    </button>
+                                                </div>
+                                            </div>
+    
+                                        </form>
+                                        <hr>
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Sku</th>
+                                                    <th scope="col">Description</th>
+                                                    <th scope="col">OEM</th>
+                                                    <th scope="col">Treadwear</th>
+                                                    <th scope="col">Hazzard</th>
+                                                    <th scope="col">MSRP</th>
+                                                    <th scope="col">Price</th>
+                                                    <th scope="col">Promo</th>
+                                                    <th scope="col">Stock</th>
+                                                    <th scope="col">QTY</th>
+                                                    <th scope="col">Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">50649</th>
+                                                    <td class="text-truncate">215/50R17 MICHELIN X-ICE SNOW 95H XL</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td>60.000 km</td>
+                                                    <td>285.00</td>
+                                                    <td>279.99 $</td>
+                                                    <td class="text-success"></td>
+                                                    <td>20</td>
+                                                    <td>
+                                                        <input type="number" class="form-control" style="max-width:70px">
+                                                    </td>
+                                                    <td>
+                                                        <button class="btn btn-primary" @click="toggleProductSelected" data-bs-toggle="modal">
+                                                            <i class="fa-solid fa-plus"></i>
+                                                        </button>
+                                                    </td>    
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>                                    
+                                </div>                                     
+                            </div>                                
                         </div>
 
                     </div>
@@ -1293,7 +1708,3 @@ export default {
     }
 }
 </script>
-
-<style>
-
-</style>
