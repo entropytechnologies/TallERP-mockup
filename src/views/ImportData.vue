@@ -51,7 +51,7 @@
                             </div>
                         </div>
                     </div>
-                    <button class="btn btn-secondary form-select" id="uploadConfirm" @click.prevent="uploadConfirm">Upload</button>
+                    <button class="btn btn-secondary form-control" id="uploadConfirm" @click.prevent="uploadConfirm">Upload</button>
                 </form>
             </div>
         </div>
