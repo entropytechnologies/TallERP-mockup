@@ -41,6 +41,14 @@
                             <li><router-link class="dropdown-item" to="/neworderplus">New Order Plus Page</router-link></li>
                         </ul>
                     </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Setup
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><router-link class="dropdown-item" to="/import_data">Import CSV</router-link></li>
+                        </ul>
+                    </li>
                     <li class="nav-item">
                         <router-link class="nav-link" aria-current="page" to="/service">Service</router-link>
                     </li>

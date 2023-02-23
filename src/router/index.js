@@ -14,6 +14,7 @@ import NewVehicleView from '../views/NewVehicleView.vue'
 import TireStorage from '../views/TireStorageView.vue'
 import ServiceView from '../views/ServiceView.vue'
 import ShopView from '../views/ShopView.vue'
+import ImportData from '../views/ImportData.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -92,6 +93,11 @@ const router = createRouter({
       path: '/shop',
       name: 'Shop',
       component: ShopView
+    },
+    {
+      path: '/import_data',
+      name: 'ImportData',
+      component: ImportData
     }
   ]
 })
