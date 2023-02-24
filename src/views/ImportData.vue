@@ -8,7 +8,7 @@
                 <div class="card-title">
                     <h4>Scan & Upload CSV File</h4>
                 </div>
-                <form action="submit.prevent()" class="mt-4">
+                <form @submit.prevent="" class="mt-4">
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Import Type</label>
                         <select class="form-select" placeholder="" v-model="importType">
@@ -18,9 +18,9 @@
                             <option value="Accounting">Accounting</option>
                         </select>    
                     </div>
-                    <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">CSV File</label>
+                    <div class="input-group mb-3">
                         <input type="file" class="form-control" id="uploadFile" placeholder="" accept=".csv" required>
+                        <button class="btn btn-secondary" @click.prevent="uploadConfirm">Confirm Upload</button>
                     </div>
                     <div class="mb-3" v-if="importType">
                         <h4 class="card-title">Import Options</h4>
@@ -33,27 +33,21 @@
                         </select>    
                     </div>
                     <div class="mb-3" v-if="dataHandling">
-                        <h4 class="card-title">Field Mapping</h4>
-                        <div class="row mt-3">
-                            <div class="col-3">
-                                <h5>File content Fields</h5>
-                                <ul class="list-group">
-                                    <li class="list-group-item" v-for="(fileKey, index) in fileKeys">{{ fileKey }}</li>
-                                </ul>    
-                            </div>    
-                            <div class="col-6 bg-light">
-                                <h4 class="card-title text-center">Field Mapping</h4>
-                                <div class="row">
+                        <div class="row mt-4"> 
+                            <div class="col-12">
+                                <h4 class="card-title">Field Mapping</h4>
+                                <div class="row mt-4">
                                     <div class="col-6">
+                                        <h5 class="text-center mb-4">Uploaded File fields</h5>
                                         <div v-for="(fileKey, index) in fileKeys" class="d-flex">  
                                             <select class="form-select me-3" id="" >
                                                 <option selected>{{fileKey}}</option>
                                                 <option value="" v-for="(fileKey, index) in fileKeys"> {{fileKey}}</option>
                                             </select>
-                                            <p><i class="fas fa-arrow-right"></i></p>
                                         </div>
                                     </div> 
                                     <div class="col-6">
+                                        <h5 class="text-center mb-4">System fields</h5>
                                         <select class="form-select" id="" v-for="(customerField, index) in customerFields">
                                             <option selected>{{ customerField }}</option>
                                             <option value="" v-for="(customerField, index) in customerFields">{{ customerField }}</option>
@@ -61,15 +55,46 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-3">
-                                <h5>Solenoyd ERP fields</h5>
-                                <ul class="list-group">
-                                    <li class="list-group-item" v-for="(customerField, index) in customerFields">{{ customerField }}</li>
-                                </ul>    
+                            <!-- Button trigger modal -->
+                            <a type="button" class="text-info my-3 text-center" data-bs-toggle="modal" data-bs-target="#previewModal" href="#">
+                                Preview your data
+                            </a>
+                        </div>
+                    </div>
+                    <div v-if="dataHandling">
+                        <!-- Modal -->
+                        <div class="modal fade" id="previewModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-xl">
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th v-for="(fileKey, index) in fileKeys" scope="col">{{fileKey}}</th>
+                                            </tr>    
+                                        </thead>
+                                        <tbody>
+                                            <tr v-for="(fileContent, index) in fileContent">
+                                                <th scope="row">{{index}}</th>
+                                                <td v-for="(fileKey, index) in fileKeys">{{fileContent[fileKey]}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <button class="btn btn-secondary form-control" @click.prevent="uploadConfirm">Upload</button>
+                    <button class="btn btn-success form-control" type="submit">Success</button>
                 </form>
             </div>
         </div>
@@ -88,7 +113,7 @@ export default {
         const fileKeys = ref([]);
         const toggleImportType = () => {
             importType.value === !importType.value;
-        }
+        };
         const uploadConfirm = () => {
             Papa.parse(document.getElementById('uploadFile').files[0], {
                 header: true,
@@ -100,22 +125,7 @@ export default {
                     fileKeys.value = Object.keys(fileContent.value[0]);
                 }
             });
-
-
-            
-        }
-        /*const uploadConfirm = document.getElementById('uploadConfirm');
-        addEventListener('click', () => {
-            Papa.parse(document.getElementById('uploadFile').files[0], {
-                header: true,
-                skipEmptyLines: true,
-                complete: function(results) {
-                    fileContent.value = results.data;
-                    console.log(results.data);
-                }
-            });
-
-        });*/
+        };
         customerFields
 
         return {
