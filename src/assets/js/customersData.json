@@ -1,1 +1,50 @@
-["type", "first_name", "last_name", "legal_id", "email", "phone", "description", "ar_account", "currency", "price_list"]
+[
+    {   
+        "type": "Person",
+        "first_name": "William",
+        "last_name": "Faulkner",
+        "lega_id": 111111,
+        "email": "wiliamfaulkner@gmail.com",
+        "phone": "1234567890",
+        "description": "William Faulkner is a famous American writer",
+        "ar_account": "...",
+        "currency": "USD",
+        "price_list": "Standard"
+    },
+    {   
+        "type": "Person",
+        "first_name": "John",
+        "last_name": "Steinbeck",
+        "lega_id": 222222,
+        "email": "marcussteinbeck@gmail.com",
+        "phone": "1234567890",
+        "description": "John Steinbeck is a famous American writer",
+        "ar_account": "...",
+        "currency": "USD",
+        "price_list": "Standard"
+    },
+    {
+        "type": "Person",
+        "first_name": "Ernest",
+        "last_name": "Hemingway",
+        "lega_id": 333333,
+        "email": "ernesthemingway@gmail.com",
+        "phone": "1234567890",
+        "description": "Ernest Hemingway is a famous American writer",
+        "ar_account": "...",
+        "currency": "USD",
+        "price_list": "Standard"
+    },
+    {
+        "type": "Person",
+        "first_name": "F. Scott",
+        "last_name": "Fitzgerald",
+        "lega_id": 444444,
+        "email": "scottfitzgerald@gmail.com",
+        "phone": "1234567890",
+        "description": "F. Scott Fitzgerald is a famous American writer",
+        "ar_account": "...",
+        "currency": "USD",
+        "price_list": "Standard"
+    }    
+]

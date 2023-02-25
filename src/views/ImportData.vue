@@ -39,10 +39,10 @@
                                 <div class="row mt-4">
                                     <div class="col-6">
                                         <h5 class="text-center mb-4">Uploaded File fields</h5>
-                                        <div v-for="(fileKey, index) in fileKeys" class="d-flex">  
-                                            <select class="form-select me-3" id="" >
-                                                <option selected>{{fileKey}}</option>
-                                                <option value="" v-for="(fileKey, index) in fileKeys"> {{fileKey}}</option>
+                                        <div v-for="(newKey, index) in newKeys" class="d-flex">  
+                                            <select class="form-select me-3" id="">
+                                                <option selected>{{newKey}}</option>
+                                                <option :value="newKey" v-for="(newKey, index) in fileKeys"> {{newKey}}</option>
                                             </select>
                                         </div>
                                     </div> 
@@ -55,10 +55,23 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Button trigger modal -->
-                            <a type="button" class="text-info my-3 text-center" data-bs-toggle="modal" data-bs-target="#previewModal" href="#">
-                                Preview your data
-                            </a>
+                            <div class="text-center mt-2">
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-primary my-3 text-center me-2" @click="updateKeys">
+                                    <i class="fa-solid fa-floppy-disk me-1"></i>
+                                    Save Changes
+                                </button>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-info my-3 text-center me-2" data-bs-toggle="modal" data-bs-target="#previewModal">
+                                    <i class="fa-solid fa-magnifying-glass me-1"></i>
+                                    Preview your data
+                                </button>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-warning my-3 text-center"  @click="clearData">
+                                    <i class="fa-solid fa-delete-left me-1"></i>
+                                    Clear data
+                                </button>
+                            </div>
                         </div>
                     </div>
                     <div v-if="dataHandling">
@@ -67,10 +80,11 @@
                             <div class="modal-dialog modal-xl">
                                 <div class="modal-content">
                                 <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                                    <h1 class="modal-title fs-4" id="exampleModalLabel">Preview</h1>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
+                                    <h5 class="text-center">Uploaded File</h5>
                                     <table class="table table-striped">
                                         <thead>
                                             <tr>
@@ -81,10 +95,28 @@
                                         <tbody>
                                             <tr v-for="(fileContent, index) in fileContent">
                                                 <th scope="row">{{index}}</th>
-                                                <td v-for="(fileKey, index) in fileKeys">{{fileContent[fileKey]}}</td>
+                                                <td class="text-truncate" v-for="(fileKey, index) in fileKeys">{{fileContent[fileKey]}}</td>
                                             </tr>
                                         </tbody>
                                     </table>
+                                    <hr>
+                                    <h5 class="text-center mt-4">System's Data</h5>
+                                    <div class="table-responsive">
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th v-for="(customerField, index) in customerFields" scope="col">{{customerField}}</th>
+                                                </tr>    
+                                            </thead>
+                                            <tbody>
+                                                <tr v-for="(customer, index) in customers">
+                                                    <th scope="row">{{index}}</th>
+                                                    <td class="text-truncate" v-for="(customerField, index) in customerFields">{{customer[customerField]}}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -94,7 +126,7 @@
                             </div>
                         </div>
                     </div>
-                    <button class="btn btn-success form-control" type="submit">Success</button>
+                    <button class="btn btn-success form-control" type="submit">{{dataHandling}}</button>
                 </form>
             </div>
         </div>
@@ -102,7 +134,9 @@
 </template>
 
 <script>
+import { toUpper } from 'lodash';
 import {ref} from 'vue'
+import customers from '../assets/js/customersData.json'
 import customerFields from '../assets/js/customersFields.json'
 
 export default {
@@ -111,6 +145,7 @@ export default {
         const importType = ref(false);
         const dataHandling = ref('');
         const fileKeys = ref([]);
+        const newKeys = ref([]);
         const toggleImportType = () => {
             importType.value === !importType.value;
         };
@@ -123,19 +158,33 @@ export default {
                     console.log(results.data);
                     console.log(Object.keys(fileContent.value[0]));
                     fileKeys.value = Object.keys(fileContent.value[0]);
+                    newKeys.value = fileKeys.value;
                 }
             });
         };
+        const clearData = () => {
+            fileContent.value = '';
+            newKeys.value = [];
+        };
+        const updateKeys = () => {
+            fileKeys.value === newKeys.value;
+        };
+
+        customers
         customerFields
 
         return {
             fileContent,
-            fileKeys,
             importType,
             dataHandling,
+            fileKeys,
+            newKeys,
+            toggleImportType,
             uploadConfirm,
+            clearData,
+            updateKeys,
+            customers,
             customerFields,
-            toggleImportType
         }
     }
 }
