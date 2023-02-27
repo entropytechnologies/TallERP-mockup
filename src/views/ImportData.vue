@@ -85,7 +85,8 @@
                                                     <table class="table table-striped">
                                                         <thead>
                                                             <tr>
-                                                                <th v-for="(fileKey, index) in fileKeys" scope="col">{{fileKey}}</th>
+                                                                <th scope="col">#</th>
+                                                                <th v-for="(fileKey, index) in newKeys" scope="col">{{fileKey}}</th>
                                                             </tr>    
                                                         </thead>
                                                         <tbody>
