@@ -81,19 +81,21 @@
                                         <div class="container">
                                             <div class="" v-if="fileKeys != [] && fileContent != []">
                                                 <h5 class="text-center mt-4">Uploaded File</h5>
-                                                <table class="table table-striped">
-                                                    <thead>
-                                                        <tr>
-                                                            <th v-for="(fileKey, index) in fileKeys" scope="col">{{fileKey}}</th>
-                                                        </tr>    
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr v-for="(fileContent, index) in fileContent">
-                                                            <th scope="row">{{index}}</th>
-                                                            <td class="text-truncate" v-for="(fileKey, index) in fileKeys">{{fileContent[fileKey]}}</td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
+                                                <div class="table-responsive">
+                                                    <table class="table table-striped">
+                                                        <thead>
+                                                            <tr>
+                                                                <th v-for="(fileKey, index) in fileKeys" scope="col">{{fileKey}}</th>
+                                                            </tr>    
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr v-for="(fileContent, index) in fileContent">
+                                                                <th scope="row">{{index}}</th>
+                                                                <td class="text-truncate" v-for="(fileKey, index) in fileKeys">{{fileContent[fileKey]}}</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>    
                                                 <hr>
                                                 <h5 class="text-center mt-4">System's Data</h5>
                                                 <div class="table-responsive">
@@ -131,7 +133,7 @@
                             </div>
                         </div>
                     </div>
-                    <button class="btn btn-success form-control" type="submit">{{dataHandling}}</button>
+                    <button class="btn btn-success form-control" type="submit" @click="addRecords">{{dataHandling}}</button>
                 </form>
             </div>
         </div>
@@ -145,11 +147,14 @@ import customerFields from '../assets/js/customersFields.json'
 
 export default {
     setup() {
+        const customersEdit = JSON.stringify(customers);
         const fileContent = ref('');
         const importType = ref(false);
         const dataHandling = ref('');
         const fileKeys = ref([]);
         const newKeys = ref([]);
+        const newRecords = ref([]);
+        //
         const toggleImportType = () => {
             importType.value === !importType.value;
         };
@@ -177,20 +182,29 @@ export default {
         const deleteKey = (index) => {
             newKeys.value.splice(index, 1);
         };
-        customers
+        const addRecords = () => {
+            const fileContentToJson = JSON.stringify(fileContent);
+            newRecords.value = customersEdit.concat(fileContentToJson);
+            console.log(newRecords.value);
+        };
+        //
+        customers,
         customerFields
 
         return {
+            customersEdit,
             fileContent,
             importType,
             dataHandling,
             fileKeys,
             newKeys,
+            newRecords,
             toggleImportType,
             uploadConfirm,
             clearData,
             updateKeys,
             deleteKey,
+            addRecords,
             customers,
             customerFields,
         }
