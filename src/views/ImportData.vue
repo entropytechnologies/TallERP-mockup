@@ -59,7 +59,10 @@
                                             <div class="col-6">
                                                 <h5 class="text-center mb-4">Uploaded File fields</h5>
                                                 <div v-for="(newKey, index) in newKeys" class="d-flex">  
-                                                    <select class="form-select me-3" id="">
+                                                    <span class="text-danger" @click="deleteKey" style="cursor:pointer">
+                                                        <i class="fa-solid fa-trash mt-2 me-2"></i>
+                                                    </span>
+                                                    <select class="form-select mx-2" id="">
                                                         <option selected>{{newKey}}</option>
                                                         <option :value="newKey" v-for="(newKey, index) in fileKeys"> {{newKey}}</option>
                                                     </select>
@@ -171,6 +174,9 @@ export default {
         const updateKeys = () => {
             fileKeys.value = newKeys.value;
         };
+        const deleteKey = (index) => {
+            newKeys.value.splice(index, 1);
+        };
         customers
         customerFields
 
@@ -180,11 +186,11 @@ export default {
             dataHandling,
             fileKeys,
             newKeys,
-
             toggleImportType,
             uploadConfirm,
             clearData,
             updateKeys,
+            deleteKey,
             customers,
             customerFields,
         }
