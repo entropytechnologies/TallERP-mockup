@@ -237,7 +237,7 @@ export default {
                 newRecords.value.push(newRecord);
             });
 
-            console.log(newRecords.value);
+            console.log(JSON.stringify(newRecords.value));
         };
         
         function addMapping() {
