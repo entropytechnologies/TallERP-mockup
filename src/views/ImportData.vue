@@ -23,9 +23,9 @@
                         <label for="dataHandlingInput" class="form-label">Data Handling</label>
                         <select class="form-select" placeholder="" v-model="dataHandling">
                             <option selected>Select...</option>
-                            <option value="add">Add</option>
+                            <option value="insert">Insert</option>
                             <option value="update">Update</option>
-                            <option value="add&update">Add or Update</option>
+                            <option value="upsert">Upsert</option>
                         </select>    
                     </div>
                     <div class="input-group mb-3">
@@ -56,40 +56,51 @@
                                 <div class="tab-content" id="myTabContent">
                                     <div class="tab-pane fade show active" id="fieldMapping-tab-pane" role="tabpanel" aria-labelledby="fieldMapping-tab" tabindex="0">
                                         <div class="row mt-4">
-                                            <div class="col-4">
+                                            <div class="col-3">
                                                 <h5 class="text-center mb-4">Uploaded File fields</h5>
-                                                <ul>
-                                                    <li v-for="(newKey, index) in newKeys">{{newKey}}</li>
+                                                <ul class="list-group">
+                                                    <li class="list-group-item bg-light" v-for="(newKey, index) in newKeys">{{newKey}}</li>
                                                 </ul>
                                             </div> 
-                                            <div class="col-4">
-                                                <div class="d-flex">
-                                                    <div>
-                                                        <label>File Field</label>
-                                                        <select v-model="new_mapping.file_field">
-                                                            <option v-for="(newKey, index) in newKeys" :value="newKey">{{ newKey }}</option>
-                                                        </select>
+                                            <div class="col-6">
+                                                <div class="row mt-3 text-center g-2">
+                                                    <div class="col-5">
+                                                        <div class="">
+                                                            <label class="form-label">File Field</label>
+                                                            <select class="form-select" v-model="new_mapping.file_field">
+                                                                <option v-for="(newKey, index) in newKeys" :value="newKey">{{ newKey }}</option>
+                                                            </select>
+                                                        </div>
                                                     </div>
-                                                    <div>
-                                                        <button @click="addMapping" class="btn btn-primary">Add</button>
-                                                    </div>
-                                                    <div>
-                                                        <label>System Field</label>
-                                                        <select v-model="new_mapping.system_field">
+                                                    <div class="col-5">
+                                                        <label class="form-label">System Field</label>
+                                                        <select class="form-select" v-model="new_mapping.system_field">
                                                             <option v-for="(customerField, index) in customerFields" :value="customerField">{{ customerField }}</option>
                                                         </select>
                                                     </div>
+                                                    <div class="col-2">
+                                                        <label class="form-label">Action </label>
+                                                        <button @click="addMapping" class="form-control btn btn-primary">
+                                                            <i class="fa-solid fa-circle-plus me-1"></i>
+                                                            Add
+                                                        </button>
+                                                    </div>
                                                 </div>
-                                                <div class="mt-2">
-                                                    <ul>
-                                                        <li v-for="(mapped_fields, index) in mapped_fields" @click="removeMapping(index)">{{ mapped_fields.file_field }} - "{{ mapped_fields.system_field }}"</li>
+                                                <div class="mt-3">
+                                                    <ul class="list-group">
+                                                        <li class="list-group-item shadow-sm" v-for="(mapped_fields, index) in mapped_fields" @click="removeMapping(index)">
+                                                            <span class="me-3">
+                                                                <i class="fa-solid fa-trash text-danger" style="cursor: pointer;" @click="removeMapping()"></i>
+                                                            </span> 
+                                                            {{ mapped_fields.file_field }} - "{{ mapped_fields.system_field }}"
+                                                        </li>
                                                     </ul>
                                                 </div>
                                             </div>
-                                            <div class="col-4">
-                                                <h5 class="text-center mb-4">System fields</h5>
-                                                <ul>
-                                                    <li v-for="(customerField, index) in customerFields">{{ customerField }}</li>
+                                            <div class="col-3">
+                                                <h5 class="mb-4">System fields</h5>
+                                                <ul class="list-group">
+                                                    <li class="list-group-item bg-light" v-for="(customerField, index) in customerFields">{{ customerField }}</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -140,16 +151,20 @@
                                 </div>
                                 <!---Tabs Content-->
                             </div>
-                            <div class="text-center mt-2">
+                            <div class="text-center mt-1">
                                 <!-- Button trigger modal -->
                                 <button type="button" class="btn btn-primary my-3 text-center me-2" @click="updateKeys">
                                     <i class="fa-solid fa-floppy-disk me-1"></i>
                                     Save Changes
                                 </button>
                                 <!-- Button trigger modal -->
-                                <button type="button" class="btn btn-warning my-3 text-center" @click="clearData">
+                                <button type="button" class="btn btn-warning my-3 text-center me-2" @click="clearData">
                                     <i class="fa-solid fa-delete-left me-1"></i>
-                                    Clear data
+                                    Clear Mapping
+                                </button>
+                                <button type="button" class="btn btn-secondary my-3 text-center" @click="restartProcess">
+                                    <i class="fa-solid fa-rotate-right me-1"></i>
+                                    Restart Process
                                 </button>
                             </div>
                         </div>
@@ -195,9 +210,7 @@ export default {
             });
         };
         const clearData = () => {
-            fileContent.value = '';
-            fileKeys.value = [];
-            newKeys.value = [];
+            mapped_fields.value = [];
         };
         const updateKeys = () => {
             fileKeys.value = newKeys.value;
@@ -241,6 +254,22 @@ export default {
                 mapped_fields.value.splice(index, 1);
             }
         }
+        function restartProcess() {
+
+            let confirmed = confirm('Do you wish to restart the process?');
+
+            if(confirmed) {
+                mapped_fields.value = [];
+                new_mapping.value = {};
+                fileContent.value = '';
+                importType.value = false;
+                dataHandling.value = '';
+                fileKeys.value = [];
+                newKeys.value = [];
+                newRecords.value = [];
+                document.getElementById('uploadFile').value = '';
+            }
+        }
 
         return {
             mapped_fields,
@@ -262,6 +291,7 @@ export default {
             customerFields,
             addMapping,
             removeMapping,
+            restartProcess
         }
     }
 }
