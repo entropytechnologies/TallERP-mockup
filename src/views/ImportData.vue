@@ -18,10 +18,6 @@
                             <option value="Accounting">Accounting</option>
                         </select>    
                     </div>
-                    <div class="input-group mb-3">
-                        <input type="file" class="form-control" id="uploadFile" placeholder="" accept=".csv" required>
-                        <button class="btn btn-secondary" @click.prevent="uploadConfirm">Confirm Upload</button>
-                    </div>
                     <div class="mb-3" v-if="importType">
                         <h4 class="card-title">Import Options</h4>
                         <label for="dataHandlingInput" class="form-label">Data Handling</label>
@@ -31,6 +27,10 @@
                             <option value="update">Update</option>
                             <option value="add&update">Add or Update</option>
                         </select>    
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="file" class="form-control" id="uploadFile" placeholder="" accept=".csv" required>
+                        <button class="btn btn-secondary" @click.prevent="uploadConfirm">Confirm Upload</button>
                     </div>
                     <div class="mb-3" v-if="dataHandling">
                         <div class="row mt-4"> 
@@ -114,6 +114,9 @@
                                                         </tbody>
                                                     </table>
                                                 </div>
+                                            </div>
+                                            <div class="text-center text-warning" v-else>
+                                                Please upload a file first
                                             </div>
                                         </div>
                                     </div>
