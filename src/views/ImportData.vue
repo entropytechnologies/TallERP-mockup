@@ -56,24 +56,41 @@
                                 <div class="tab-content" id="myTabContent">
                                     <div class="tab-pane fade show active" id="fieldMapping-tab-pane" role="tabpanel" aria-labelledby="fieldMapping-tab" tabindex="0">
                                         <div class="row mt-4">
-                                            <div class="col-6">
+                                            <div class="col-4">
                                                 <h5 class="text-center mb-4">Uploaded File fields</h5>
-                                                <div v-for="(newKey, index) in newKeys" class="d-flex">  
-                                                    <span class="text-danger" @click="deleteKey" style="cursor:pointer">
-                                                        <i class="fa-solid fa-trash mt-2 me-2"></i>
-                                                    </span>
-                                                    <select class="form-select mx-2" id="">
-                                                        <option selected>{{newKey}}</option>
-                                                        <option :value="newKey" v-for="(newKey, index) in fileKeys"> {{newKey}}</option>
-                                                    </select>
-                                                </div>
+                                                <ul>
+                                                    <li v-for="(newKey, index) in newKeys">{{newKey}}</li>
+                                                </ul>
                                             </div> 
-                                            <div class="col-6">
+                                            <div class="col-4">
+                                                <div class="d-flex">
+                                                    <div>
+                                                        <label>File Field</label>
+                                                        <select v-model="new_mapping.file_field">
+                                                            <option v-for="(newKey, index) in newKeys" :value="newKey">{{ newKey }}</option>
+                                                        </select>
+                                                    </div>
+                                                    <div>
+                                                        <button @click="addMapping" class="btn btn-primary">Add</button>
+                                                    </div>
+                                                    <div>
+                                                        <label>System Field</label>
+                                                        <select v-model="new_mapping.system_field">
+                                                            <option v-for="(customerField, index) in customerFields" :value="customerField">{{ customerField }}</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="mt-2">
+                                                    <ul>
+                                                        <li v-for="(mapped_fields, index) in mapped_fields" @click="removeMapping(index)">{{ mapped_fields.file_field }} - "{{ mapped_fields.system_field }}"</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="col-4">
                                                 <h5 class="text-center mb-4">System fields</h5>
-                                                <select class="form-select" id="" v-for="(customerField, index) in customerFields">
-                                                    <option selected>{{ customerField }}</option>
-                                                    <option value="" v-for="(customerField, index) in customerFields">{{ customerField }}</option>
-                                                </select> 
+                                                <ul>
+                                                    <li v-for="(customerField, index) in customerFields">{{ customerField }}</li>
+                                                </ul>
                                             </div>
                                         </div>
                                     </div>
@@ -151,6 +168,8 @@ import customerFields from '../assets/js/customersFields.json'
 
 export default {
     setup() {
+        const mapped_fields = ref([]);
+        const new_mapping = ref({});
         const customersEdit = JSON.stringify(customers);
         const fileContent = ref('');
         const importType = ref(false);
@@ -187,15 +206,45 @@ export default {
             newKeys.value.splice(index, 1);
         };
         const addRecords = () => {
-            const fileContentToJson = JSON.stringify(fileContent);
-            newRecords.value = customersEdit.concat(fileContentToJson);
+
+            newRecords.value = [];
+            
+            fileContent.value.forEach(element => {
+                let newRecord = {};
+                customerFields.forEach(customerField => {
+                    let mapped_field = mapped_fields.value.find(mapped_field => mapped_field.system_field === customerField);
+                    if(mapped_field)
+                    {
+                        newRecord[customerField] = element[mapped_field.file_field];
+                    }
+                    else {
+                        newRecord[customerField] = '';
+                    }
+                });
+                newRecords.value.push(newRecord);
+            });
+
             console.log(newRecords.value);
         };
-        //
-        customers,
-        customerFields
+        
+        function addMapping() {
+            mapped_fields.value.push(new_mapping.value);
+            new_mapping.value = {};
+        }
+
+        function removeMapping(index) {
+
+            let confirmed = confirm('Do you wish to remove this mapping?');
+
+            if(confirmed)
+            {
+                mapped_fields.value.splice(index, 1);
+            }
+        }
 
         return {
+            mapped_fields,
+            new_mapping,
             customersEdit,
             fileContent,
             importType,
@@ -211,6 +260,8 @@ export default {
             addRecords,
             customers,
             customerFields,
+            addMapping,
+            removeMapping,
         }
     }
 }
